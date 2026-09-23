@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Creative Network - Sounds</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+	<script>
+		(function() {
+			var activeSounds = [];
+
+			window.addEventListener('message', function(event) {
+				var data = event.data;
+				if (!data || !data.transactionType) return;
+
+				if (data.transactionType === "playSound") {
+					var file = data.transactionFile;
+					var vol = typeof data.transactionVolume === "number" ? data.transactionVolume : 0.5;
+
+					if (!file) return;
+
+					var audio = new Audio("./sounds/" + file + ".ogg");
+					audio.volume = Math.max(0.0, Math.min(1.0, vol));
+
+					activeSounds.push(audio);
+
+					audio.addEventListener("ended", function() {
+						var idx = activeSounds.indexOf(audio);
+						if (idx !== -1) {
+							activeSounds.splice(idx, 1);
+						}
+					});
+
+					audio.addEventListener("error", function() {
+						var idx = activeSounds.indexOf(audio);
+						if (idx !== -1) {
+							activeSounds.splice(idx, 1);
+						}
+					});
+
+					var playPromise = audio.play();
+					if (playPromise !== undefined) {
+						playPromise.catch(function(err) {
+							// Ignored or handled gracefully
+						});
+					}
+				} else if (data.transactionType === "stopSound") {
+					for (var i = 0; i < activeSounds.length; i++) {
+						try {
+							activeSounds[i].pause();
+							activeSounds[i].currentTime = 0;
+						} catch (e) {}
+					}
+					activeSounds = [];
+				}
+			});
+		})();
+	</script>
+</head>
+<body>
+</body>
+</html>

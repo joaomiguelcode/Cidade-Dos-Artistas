@@ -1,0 +1,21 @@
+version '1.0.2'
+client_scripts {
+    'config.lua',
+    '@PolyZone/client.lua',
+	'@PolyZone/BoxZone.lua',
+	'@PolyZone/EntityZone.lua',
+	'@PolyZone/CircleZone.lua',
+	'@PolyZone/ComboZone.lua',
+    'client/cl_main.lua'
+} 
+server_scripts {
+    'server/sv_main.lua'
+}
+shared_scripts {
+    '@ox_lib/init.lua', 
+    "@vrp/lib/Utils.lua",
+    'config.lua'
+}
+game 'gta5'
+fx_version 'adamant'
+lua54 'yes'

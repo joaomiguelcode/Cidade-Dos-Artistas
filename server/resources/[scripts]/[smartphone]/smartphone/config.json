@@ -1,0 +1,63 @@
+{
+  "token": "Samba Roleplay",
+  "client": {
+    "bankType": "fleeca",
+    "uploadServer": "https://discord.com/api/webhooks/1158471530423013376/itg1xbf0VWmzZPEVs71G7XdOlmSQ7_k6qfsAavCcSs0dlQvkqsp0rKYoaoKVsz_wBe4a",
+    "allowUnsafeURL": true,
+    "videoServer": "ws://localhost:8080/",
+    "case": "iphone14pro",
+    "apps": {},
+    "isAndroid": false,
+    "useGameClock": true,
+    "phone_template": "XXX-XXX",
+    "backgroundURL": "samba/stock/wallpapers/iphone14.webp",
+    "disabledApps": []
+  },
+  "exclusive": {
+    "weazel": {
+      "tags": [
+        "Noticias"
+      ],
+      "permission": "Admin"
+    },
+    "casino": {
+      "maxBet": 10000
+    }
+  },
+  "call_mode": "pma-voice",
+  "webhookURL": "https://discord.com/api/webhooks/1158471530423013376/itg1xbf0VWmzZPEVs71G7XdOlmSQ7_k6qfsAavCcSs0dlQvkqsp0rKYoaoKVsz_wBe4a",
+  "instagram_verify": "Admin",
+  "instagram_accounts": {
+    "*": 1,
+    "Admin": 2
+  },
+  "moderator": "Admin",
+  "item": "cellphone",
+  "tor_blocked": [
+    "LSPD"
+  ],
+  "services": [
+    {
+      "name": "Policia",
+      "number": "190",
+      "permission": "LSPD"
+    },
+    {
+      "name": "Samu",
+      "number": "192",
+      "permission": "Paramedic"
+    },
+    {
+      "name": "Mecânico",
+      "number": "0800 042",
+      "permission": "Mechanic"
+    },
+    {
+      "name": "Prefeitura",
+      "number": "0800 000",
+      "permission": "Admin"
+    }
+  ],
+  "base": "creative_rework",
+  "channel": "stable"
+}

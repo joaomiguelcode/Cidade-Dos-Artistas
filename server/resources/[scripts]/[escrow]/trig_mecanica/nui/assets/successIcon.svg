@@ -1,0 +1,16 @@
+<svg width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="CheckCircle" opacity="0.85">
+<path id="Vector" d="M76.5938 46.3125L50.4686 71.25L37.4062 58.7812" stroke="url(#paint0_linear_1449_4205)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M57 99.75C80.6102 99.75 99.75 80.6102 99.75 57C99.75 33.3898 80.6102 14.25 57 14.25C33.3898 14.25 14.25 33.3898 14.25 57C14.25 80.6102 33.3898 99.75 57 99.75Z" stroke="url(#paint1_linear_1449_4205)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1449_4205" x1="57" y1="46.3125" x2="57" y2="71.25" gradientUnits="userSpaceOnUse">
+<stop offset="0.432292" stop-color="white"/>
+<stop offset="1" stop-color="#DED8D8"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1449_4205" x1="57" y1="14.25" x2="57" y2="99.75" gradientUnits="userSpaceOnUse">
+<stop offset="0.432292" stop-color="white"/>
+<stop offset="1" stop-color="#DED8D8"/>
+</linearGradient>
+</defs>
+</svg>

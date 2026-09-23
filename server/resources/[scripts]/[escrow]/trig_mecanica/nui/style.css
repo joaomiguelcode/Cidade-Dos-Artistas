@@ -1,0 +1,2106 @@
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+  /*   background: url(./assets/background-image.png);
+    background-size: cover; */
+}
+
+#menu {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.104) 0%, rgba(11, 10, 38, 0.34) 100%); */
+   /*  backdrop-filter: blur(5px); */
+}
+
+.carPartsContainer {
+    position: absolute;
+    right: 0vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26vw;
+    height: 41.5vw;
+    margin-right: 2vw;/* 
+    background-color: red; */
+}
+
+.carPartsContainer header,
+.colorModal header,
+.wheelModal header {
+    display: flex;
+    justify-content: space-between;
+    width: 26vw;
+    height: 2.75vw;/* 
+    background-color: blue; */
+}
+
+.carPartsContainer main {
+    box-shadow: 0px 0px 15px rgba(42, 50, 122, 0.1);
+}
+
+.carPartsContainer header .backButton,
+.carPartsContainer footer .button,
+.colorModal header .backButton,
+.wheelModal header .backButton {
+    display: grid;
+    place-items: center;
+    width: 8.35vw;
+    height: 2.75vw;
+    background: rgba(28, 28, 28, 0.6);
+}
+
+.carPartsContainer footer .button {
+background: linear-gradient(180deg, rgba(55, 67, 171, 0.6) 0%, rgba(33, 42, 116, 0.6) 100%);
+}
+
+.carPartsContainer header .backButton:hover,
+.colorModal header .backButton:hover,
+.colorModal header .backButton:hover {
+    background: rgba(49, 49, 49, 0.7);
+}
+
+#menuTitle:hover {
+    background: rgba(28, 28, 28, 0.6);
+}
+
+.carPartsContainer footer .button:hover {
+    background: linear-gradient(180deg, rgba(55, 67, 171, 0.8) 0%, rgba(33, 42, 116, 0.8)); 
+}
+
+.carPartsContainer header .backButton h1,
+.carPartsContainer footer .button h1,
+.colorModal header .backButton h1,
+.wheelModal header .backButton h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75vw;
+    letter-spacing: 0.1vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.carPartsContainer header .mechanicName,
+.carPartsContainer footer .budget,
+.colorBudget,
+.colorModal header .mechanicName,
+.wheelModal header .mechanicName {
+    display: grid;
+    place-items: center;
+    width: 17.25vw;
+    height: 2.75vw;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(29, 29, 29, 0.6) 0%, rgba(29, 29, 29, 0) 100%);
+}
+
+.carPartsContainer footer .budget,
+.colorBudget {
+    width: 16.75vw;
+    border-right: .5vw solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%,rgba(55, 67, 171, 0.35) 100%);
+    border-radius: 0;
+    background: rgba(29, 29, 29, 0.6);
+}
+
+.carPartsContainer header .mechanicName h1,
+.carPartsContainer footer .budget h1,
+.colorBudget h1 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.75vw;
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.carPartsContainer footer .budget h1,
+.colorBudget h1 {
+    text-transform: uppercase;
+}
+
+.carPartsContainer header .mechanicName h1 span,
+.carPartsContainer footer .budget h1 span,
+.colorBudgeth1 h1 span,
+.wheelModal header .mechanicName h1 span {
+    font-family: 'MontserratX';
+    font-weight: 100;
+    margin-left: 0.2vw
+}
+
+.carPartsContainer main,
+.colorModal main,
+.wheelModal main {
+    width: 25.5vw;
+    height: 35vw;
+    border-right: .5vw solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%, #3743AB 49.48%, rgba(55, 67, 171, 0.35) 100%);
+    overflow-y: scroll;
+    background: rgba(29, 29, 29, 0.6);
+}
+
+.colorModal main,
+.wheelModal main {
+    height: 29.25vw;
+    overflow-y: initial;
+}
+
+.carPartsContainer main::-webkit-scrollbar {
+    display: none;
+}
+
+.carParts {
+    box-sizing: border-box;
+    padding: 0.5vw 0.2vw;
+    display: flex;
+    flex-wrap: wrap;
+    width: 25.5vw;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    /* height: 9.1vw; */
+    width: 25.5vw;
+}
+
+.carPart {
+    box-sizing: border-box;
+    padding: 0.3vw 0 0.3vw 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 8.5vw;
+    margin: 0.3vw;
+    margin-top: 0;
+    background: rgba(14, 15, 17, 0.5);
+}
+
+.carPart:hover {/* 
+    transform: scale(1.02); */
+    background: rgba(14, 15, 17, 0.6);
+}
+
+.carPart:hover img {
+    transition: 0.2s;
+    transform: scale(1.1);
+}
+
+.carPart img {
+    height: 4vw;
+}
+
+.carPart h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 0.7vw;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    max-width: 90%;
+    color: #FFFFFF;
+}
+
+.carPart p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 0.3vw;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.small {
+    flex: 3;
+}
+
+.medium {
+    flex: 4;
+}
+
+.large {
+    flex: 6;
+}
+
+.itemOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 38vw;
+    margin-left: 1vw;/* 
+    background-color: rgba(255, 0, 0, 0.452); */
+}
+
+.itemOptions h1,
+.itemOptions h2 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    letter-spacing: 0.05vw;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+}
+.itemOptions h2 {
+    font-family: 'GothamL';
+    font-weight: 100;
+    margin-bottom: 0.8vw;
+}
+
+.itemOptionsContainer {
+    width: 10vw;
+    max-height: 30.5vw;
+    margin: 0.25vw 0;
+    overflow-y: scroll;
+    margin-bottom: 0.75vw;
+}
+
+.itemOptionsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.itemOptionsContainer .itemOption {
+    width: 10vw;
+    height: 6vw;
+    margin-bottom: 0.75vw;
+    border-left: .5vw solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%, #3743AB 49.48%, rgba(55, 67, 171, 0.35) 100%);
+    box-shadow: 0px 0px 15px rgba(55, 67, 171, 0.2);
+    background: linear-gradient(270deg, #16161a 0%, rgba(29, 29, 29, 0.15) 100%);
+}
+
+.itemOptionsContainer .itemOption:hover,
+.selectedItem {
+    background: linear-gradient(250deg, #191B2C 0%, rgba(29, 29, 29, 0.15) 100%) !important;
+}
+
+.itemTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 10vw;
+    height: 4vw;
+}
+
+
+img[src="./assets/upperArrowActive.svg"],
+img[src="./assets/lowerArrowActive.svg"] {
+    width: 1.75vw;
+    opacity: 0.5;
+}
+
+img[src="./assets/upperArrowActive.svg"]:hover,
+img[src="./assets/lowerArrowActive.svg"]:hover {
+    transition: 0.05s;
+    opacity: 1;
+}
+
+img[src="./assets/upperArrowActive.svg"] {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.itemOptions .priceContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 9.5vw;
+    height: 1vw;
+}
+
+img[src="./assets/cartIcon.svg"] {
+    width: 0.6vw;
+    margin: auto 0;
+    margin-right: 0.2vw;
+}
+
+.itemOptions .priceContainer .itemPrice {
+    display: grid;
+    place-items: center;
+    height: 1vw;
+    background: rgba(29, 29, 29, 0.6);
+}
+
+.itemOptions .priceContainer .itemPrice h1 {
+    font-family: 'MontserratX';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.5vw;
+    text-align: center;
+    padding: 0 0.5vw;
+    padding-left: 0.65vw;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.itemOptions .priceContainer .itemPrice h1 span {
+    font-family: 'Gotham';
+}
+
+.itemOptions .priceContainer .purchasedItem {
+    display: grid;
+    place-items: center;
+    width: 1.5vw;
+    height: 1vw;
+    box-shadow: 0px 0px 8px rgba(90, 143, 65, 0.15);
+    background: rgba(90, 143, 65, 0.4);
+}
+
+.itemOptions .priceContainer .purchasedItem img {
+    width: 0.9vw;
+}
+
+.itemOptionsContainer .itemOption .optionName h1 {
+    font-size: 0.75vw;
+    margin-top: 1.5vw;
+}
+
+.itemOptionsContainer .itemOption .optionName h1 span {
+    font-family: 'MontserratX';
+}
+
+.menuHeaderButtons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 2vw;
+    width: 26vw;
+    height: 2.75vw;
+    margin-bottom: 38.75vw;/* 
+    background-color: red; */
+}
+
+.menuHeaderButtons .menuButton {
+    display: grid;
+    place-items: center;
+    width: 8.35vw;
+    background: rgba(28, 28, 28, 0.6);
+}
+
+.menuHeaderButtons .menuButton h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.menuHeaderButtons .mechanicName h1 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.75vw;
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.menuHeaderButtons .mechanicName h1 span{
+    font-family: 'MontserratX';
+    font-weight: 100;
+    margin-left: 0.2vw;
+}
+
+.menuHeaderButtons .mechanicName {
+    display: grid;
+    place-items: center;
+    width: 17.25vw;
+    background: linear-gradient(0deg, rgba(29, 29, 29, 0.7) 0%, rgba(29, 29, 29, 0) 130%);
+    border-radius: 5px;
+}
+
+.carPartsContainer footer {
+    display: flex;
+    justify-content: space-between;
+    width: 26vw;
+    height: 2.75vw;/* 
+    background-color: blue; */
+}
+
+.colorModal,
+.wheelModal {
+    position: absolute;
+    right: 0;
+    margin-right: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26vw;
+    height: 35vw;/* 
+    background-color: red; */
+}
+
+.colorModal header .mechanicName h1,
+.wheelModal header .mechanicName h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.8vw;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.colorModal header .mechanicName h1 span {
+    font-weight: 300;
+}
+
+.colorModal main,
+.wheelModal main {
+    width: 25.5vw;
+    height: 27vw;
+}
+
+.colorModal footer,
+.wheelModal footer {
+    display: flex;
+    justify-content: space-between;
+    width: 26vw;
+    height: 3vw;
+}
+
+.colorModal footer .sendColor,
+.wheelModal footer .sendWheel,
+.neonColor .sendColor {
+    display: grid;
+    place-items: center;
+    width: 8.35vw;
+    height: 3vw;
+    background: linear-gradient(180deg, rgba(55, 67, 171, 0.6) 0%, rgba(33, 42, 116, 0.6) 100%);
+}
+
+.colorModal footer .sendColor h1,
+.wheelModal footer .sendWheel h1,
+.neonColor .sendColor h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8vw;
+    letter-spacing: 0.05vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.colorModal footer .sendColor:hover,
+.wheelModal footer .sendWheel:hover,
+.neonColor .sendColor:hover {
+    background: linear-gradient(180deg, rgba(55, 67, 171, 0.8) 0%, rgba(33, 42, 116, 0.8) 100%);
+}
+
+.colorModal footer .colorBudget,
+.wheelModal footer .wheelBudget {
+    display: grid;
+    place-items: center;
+    width: 16.75vw;
+    height: 3vw;
+    border-right: .5vw solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%, rgba(55, 67, 171, 0.25) 100%);
+    background: rgba(29, 29, 29, 0.6);
+}
+
+.colorModal footer .colorBudget h1,
+.wheelModal footer .wheelBudget h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.colorModal footer .colorBudget h1 span,
+.wheelModal footer .wheelBudget h1 span {
+    font-family: 'MontserratX';
+}
+
+.colorModal main .colorPriority {
+    height: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 0.5vw;
+}
+
+.colorModal main .colorPriority h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    text-align: center;
+    letter-spacing: 0.05vw;
+    margin-bottom: 0.15vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.colorModal main .colorPriority img {
+    padding: 0 0.5vw;
+}
+
+.colorModal main .colorPreview {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 5px;
+    border: 2px solid #C5C5C5;
+}
+
+.colorModal main .colorPreview:hover {
+    transition: 0.1s;
+    transform: scale(1.01);
+    border: 2px solid #d4d4d4;
+}
+
+.colorModal main .colorPreview input {
+    width: 7.75vw;
+    height: 7.75vw;
+    opacity: 0;
+}
+
+.colorModal main .colorTypes {
+    width: 19vw;
+    height: 2vw;
+    margin-top: 2.1vw;
+}
+
+.colorModal main .colorTypes .type {
+    width: 6vw;
+    height: 2vw;
+    background: linear-gradient(180deg, rgba(29, 29, 29, 0.6) 0%, rgba(18, 18, 18, 0.6) 100%);
+}
+
+.colorModal main .colorTypes .type:hover,
+.selectedColorType {
+    box-sizing: border-box;
+    background: linear-gradient(180deg, rgba(29, 29, 29, 0.8) 0%, rgba(18, 18, 18, 0.8) 100%);
+    border: 0.1vw solid rgb(170, 170, 170);
+}
+
+.colorModal main .colorTypes .type h1 {
+    font-family: 'MontserratX';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.6vw;
+    letter-spacing: 0.05vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.colorModal main h2 {
+    font-family: 'GothamL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.15vw;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.colorPreview:hover input {
+    z-index: 1;
+}
+
+.colorModal2 {
+    position: relative;
+}
+
+.colorModal main .colorPreview2 {
+    align-items: center;
+    position: absolute;
+    top: 14.5vw;
+    height: 5.5vw;
+    width: 19vw;
+    align-items: center;
+    margin-top: -1vw;
+}
+
+/* .secondaryColorInputContainer {
+    background-image: blue;
+} */
+.colorModal main .colorPreview2 input {
+    height: 2vw;
+    z-index: 999;
+}
+
+.colorModal main .colorPreview2 h1,
+.pearlyColors h1 {
+    text-align: center;
+    font-family: MontserratX;
+    font-size: 0.52vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #FFF;
+}
+
+.pearlyColors {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.05vw;
+    width: 21.8vw;
+    height: 4.57vw;
+}
+
+.pearlyColorsContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 2.48vw;
+    margin-top: 0.2vw;
+}
+
+.pearlyColorsContainer img {
+    width: 1.05vw;
+}
+
+.pearlyColorsContainer img:hover {
+    transform: scale(1.25);
+}
+
+.pearlyColorsOptions {
+    display: flex;
+    justify-content: center;
+    width: 19.8vw;
+}
+
+.pearlyColor {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 2.35vw;
+    height: 2.35vw;
+    margin: 0 0.36vw;
+    border-radius: 0.26vw;
+    transition: 0.1s;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.pearlyColor:hover,
+.pearlyColor.selectedPearlyColor {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.pearlyColor::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 0.26vw;
+    transition: 0.1s;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.40) 100%);
+}
+
+.pearlyColor:hover::after {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+.pearlyColorsOptions::-webkit-scrollbar {
+    display: none;
+}
+
+.pearlyColors h1 {
+    font-size: 0.6vw;
+}
+
+.colorTypeSelector {
+    /* display: flex; */
+    align-items: center;
+    height: 3vw;
+    width: 3.15vw;
+    margin-bottom: 0.5vw;
+}
+
+.inputColor {
+    width: 3vw;
+    height: 3vw;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+.inputColor:hover {
+    transition: 0.1s;
+    transform: scale(1.01);
+}
+
+.inputColor img {
+    width: 1vw;
+}
+
+.inputColor input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wheelModal main {
+    box-sizing: border-box;
+    padding-top: 1.25vw;
+    width: 26vw;
+    height: 28vw;/* 
+    background-color: rgba(255, 255, 0, 0.3); */
+}
+
+.wheelModal main h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.05vw;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+
+.wheelSettings {
+    width: 22vw;
+    height: 22.5vw;
+    margin-top: 1.25vw;/* 
+    background-color: red; */
+}
+
+.wheels {
+    margin-bottom: 1vw;
+}
+
+#wheelTitle {
+    font-family: 'GothamL';
+    letter-spacing: 0.075vw;
+    font-size: 0.7vw;
+    margin-bottom: 0.25vw;
+}
+
+.wheels h2,
+.wheels p {
+    font-family: 'MontserratX';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.65vw;
+    margin: 0.65vw 0;
+    text-align: center;
+    letter-spacing: 0.05vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.wheels h2:nth-child(5) {
+    margin-top: 0.75vw;
+}
+
+.wheels p {
+    font-size: 0.6vw;
+}
+
+.inputContainer {
+    position: relative;
+    width: 18vw;
+    height: 0.2vw;
+    margin: 1vw 0;
+    background-color: rgba(0, 0, 0, 0.836);
+}
+
+.inputBar {
+    width: 9vw;
+    height: 0.2vw;
+    background-color: white;
+}
+
+.inputContainer input {
+    position: absolute;
+    top: -0.2vw;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18vw;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: rgba(221, 221, 221, 0);
+    border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 0.6vw;
+    width: 0.6vw;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.49);
+    background: white;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(204, 204, 204, 0);
+}
+
+.mechanicManagerContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.mechanicManager {
+    width: 55vw;
+    height: 35vw;
+    overflow: hidden;/* 
+    background-color: rgba(255, 0, 0, 0.24); */
+}
+
+.mechanicManager header {
+    width:98.5%;
+    height: 3vw;/* 
+    background-color: red; */
+}
+
+.mechanicManager header .mechanicTitle {
+    width: 20vw;
+    height: 3vw;
+    background: rgba(21, 21, 22, 0.75);
+    border-radius: 5px;
+}
+
+.mechanicManager header .mechanicTitle h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.85vw;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.mechanicManager header .mechanicTitle h1 span {
+    font-weight: 300;
+}
+
+.mechanicManager header nav {
+    width: 30vw;
+    height: 3vw;/* 
+    background-color: blue; */
+}
+
+.mechanicManager header nav ul {
+    list-style: none;
+}
+
+.mechanicManager header nav ul li {
+    display: grid;
+    place-items: center;
+    width: 8vw;
+    height: 3vw;
+    background: rgba(21, 21, 22, 0.75);
+    border-radius: 5px;
+}
+
+.mechanicManager header nav ul li:last-child {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 5px;
+    background: rgba(39, 54, 181, 0.75);
+}
+
+.mechanicManager header nav ul li:hover {
+    box-sizing: border-box;
+    border: 0.1vw solid rgba(39, 54, 181, 0.45);
+}
+
+.selectedManagerPage {
+    box-sizing: border-box;
+    border: 0.1vw solid rgba(39, 54, 181, 0.45);
+}
+
+.mechanicManager header nav ul li h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.65vw;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mechanicManager header nav ul li:last-child img {
+    width: 1.5vw;
+}
+
+.mechanicManager main {
+    position: relative;
+    width: 54.25vw;
+    height: 31.5vw;
+    border-radius: 10px;
+    /* border-left: 0.75vw solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%, #3743AB 49.48%, rgba(55, 67, 171, 0.35) 100%); */
+    background: rgba(21, 21, 22, 0.75);
+}
+
+.mechanicManager main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.75vw;
+    height: 100%;
+    border-radius: 1vw 0 0 1vw;
+    background: linear-gradient(180deg, rgba(55, 67, 171, 0.35) 0%, #3743AB 49.48%, rgba(55, 67, 171, 0.35) 100%);
+}
+
+.budgetList {
+    width: 51.5vw;
+    height: 29vw;
+    overflow-y: scroll;
+}
+
+.budgetList::-webkit-scrollbar {
+    width: 0.35vw;
+    border-radius: 30px;
+    background: rgba(11, 11, 11, 0.2);
+}
+
+.budgetList::-webkit-scrollbar-track {
+    border-radius: 30px;
+}
+
+.budgetList::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    border: 0.1vw solid rgba(134, 161, 255, 0.2);
+    background: rgba(11, 11, 11, 1);
+}
+
+.budgetItem {
+    transition: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 50.25vw;
+    height: 4.75vw;
+    border-radius: 5px;
+    margin-bottom: 0.6vw;
+    background: rgba(15, 15, 15, 0.8);
+}
+
+.budgetItem:hover {
+    /* box-sizing: border-box;
+    border: 0.1vw solid rgba(134, 161, 255, 0.2); */
+    transition: 0.3s;
+    border-radius: 10px;/* 
+    transform: scale(1.01); */
+    background: rgba(19, 18, 18, 0.8);
+}
+
+.budgetItem h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 0.7vw;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.budgetItem h1 span {
+    font-family: 'MontserratX';
+    font-weight: 100;
+}
+
+.budgetItem h1:nth-child(2) {
+    text-transform: uppercase;
+}
+
+.budgetItem .buttons {
+    width: 8vw;
+    height: 2vw;
+}
+
+.budgetItem .buttons .seeMore {
+    width: 5.5vw;
+    height: 2vw;
+    border-radius: 5px;
+    background: rgba(24, 26, 31, 0.6);
+}
+
+.budgetItem .buttons .seeMore:hover {
+    box-sizing: border-box;
+    border: 0.1vw solid rgba(39, 54, 181, 0.45);
+    background: rgba(27, 29, 34, 0.45);
+}
+
+.budgetItem .buttons .seeMore h1 {
+    font-family: 'GothamL';
+    font-weight: 100;
+    font-size: 0.55vw;
+    text-transform: uppercase;
+}
+
+.budgetItem .buttons .trash {
+    width: 1.75vw;
+    height: 1.75vw;
+    border-radius: 5px;
+    background: rgba(39, 54, 181, 0.45);
+}
+
+.budgetItem .buttons .trash:hover {
+    background: rgba(39, 54, 181, 0.55);
+}
+
+.budgetItem .buttons .trash img {
+    width: 0.85vw;
+}
+
+.budgetInfos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50.25vw;
+    height: 4.25vw;
+    border-radius: 5px;/* 
+    background: rgba(39, 54, 181, 0.55); */
+}
+
+.budgetDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50.25vw;
+    height: 13.75vw;
+    border-radius: 5px;
+    animation: seeMore ease-in 0.2s forwards;
+}
+
+@keyframes seeMore {
+    0% { 
+        transform: scaleY(0);
+        margin-bottom: 13.75vw;
+    }
+    100% {
+        transform: scaleY(1);
+        margin-bottom: 0vw;
+    }
+}
+
+/* 
+.budgetItem:hover .budgetItems {
+    background: rgba(26, 26, 27, 0.87);
+} */
+
+.budgetItems {
+    box-sizing: border-box;
+    padding: 1vw 1.25vw;
+    width: 18.5vw;
+    height: 11.5vw;
+    margin-left: 0.75vw;
+    border-radius: 5px;
+    overflow-y: scroll;
+    background: rgba(24, 24, 26, 0.5);
+}
+
+.budgetItems::-webkit-scrollbar {
+    display: none;
+}
+
+.budgetItems .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16vw;
+    height: 1.5vw;
+    margin-bottom: 0.25vw;/* 
+    background-color: red; */
+}
+
+.budgetItems .item img:hover {
+    transition: 0.1s;
+    transform: scale(1.15);
+}
+
+.budgetItems .item h1,
+.budgetItems .item h2 {
+    font-family: 'GothamL';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7vw;
+    width: 8vw;
+    line-height: 12px;/* 
+    background-color: rebeccapurple; */
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.budgetItems .item h2 {
+    font-family: 'MontserratX';
+    font-size: 0.65vw;
+    width: 5vw;
+    font-weight: 100;/* 
+    background-color: blue; */
+    text-transform: capitalize;
+}
+
+img[src="./assets/removeIcon.svg"] {
+    width: 0.9vw;
+}
+
+.budgetDetails .budgetValue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 11.5vw;
+    height: 9.5vw;/* 
+    background-color: rgba(255, 0, 0, 0.384); */
+}
+
+.budgetDetails .budgetValue h1,
+.budgetDetails .budgetValue h2 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.1vw;
+    line-height: 1.4vw;
+    letter-spacing: 0.05vw;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.budgetDetails .budgetValue h2 {
+    font-family: 'GothamL';
+    font-size: 0.95vw;
+}
+
+.budgetDetails .confirmButton {
+    width: 8.5vw;
+    height: 12.75vw;
+    background: linear-gradient(270deg, #1B225C 0%, rgba(27, 34, 92, 0) 100%);
+    border-radius: 5px;
+}
+
+.budgetDetails .confirmButton:hover {
+    background: linear-gradient(270deg, #1f2770 0%, rgba(27, 34, 92, 0) 100%);
+}
+
+.budgetDetails .confirmButton h1 {
+    font-family: 'MontserratX';
+    font-weight: 600;
+    letter-spacing: 0.1vw;
+    font-size: 1.25vw;
+    transform: rotate(90deg);
+}
+
+.budgetDetails .budgetValue input {
+    border: none;
+    outline: none;
+    width: 11vw;
+    height: 2.5vw;
+    border-radius: 5px;
+    margin-top: 0.5vw;
+    font-family: 'GothamL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: rgba(24, 24, 26, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.discountButton {
+    width: 11vw;
+    height: 2.5vw;
+    border-radius: 5px;
+    background: rgba(27, 34, 92, 0.3);
+}
+
+.discountButton:hover {
+    background: rgba(27, 34, 92, 0.5);
+}
+
+.discountButton h1:nth-child(1) {
+    font-family: 'GothamL';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7vw;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+
+.statsManager {
+    display: flex;
+    justify-content: space-between;
+    width: 51.5vw;
+    height: 29vw;/* 
+    background-color: rgba(255, 0, 0, 0.315); */
+}
+
+.statsListContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 35.5vw;
+    height: 29vw;/* 
+    background-color: rgba(0, 0, 255, 0.425); */
+}
+
+.statsListContainer h1 {
+    font-family: 'Gotham';
+    font-weight: 100;
+    font-size: 1vw;
+    text-align: center;
+    letter-spacing: 0.05vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.statsListContainer header {
+    width: 95%;
+    height: 3vw;
+    background: rgba(9, 9, 9, 0.3);
+}
+
+.statsListContainer header h1 {
+    font-family: 'GothamL';
+    font-weight: 900;
+    font-size: 0.65vw;
+    letter-spacing: 0.075vw;
+}
+
+.statsTableContainer {
+    width: 100%;
+    height: 25.25vw;
+    overflow-y: scroll;
+}
+
+.statsTableContainer table {
+    width: 96%;
+}
+
+.statsTableContainer tr {
+    transform: scaleX(1.01);
+    width: 99.9%;
+    display: flex;
+    height: 2vw;
+    margin-bottom: 0.2vw;
+}
+
+.statsTableContainer tr:nth-child(odd) {
+    background: rgba(12, 12, 12, 0.4);
+}
+
+.statsTableContainer tr:nth-child(even) {
+background: rgba(9, 9, 9, 0.5);
+}
+
+.statsTableContainer td:nth-child(1) {
+    display: grid;
+    place-items: center;
+    width: 9.1vw;
+    height: 2vw;
+}
+
+.statsTableContainer td:nth-child(2) {
+    display: grid;
+    place-items: center;
+    width: 12.45vw;
+    height: 2vw;
+}
+
+.statsTableContainer td:nth-child(3) {
+    display: grid;
+    place-items: center;
+    width: 12vw;
+    height: 2vw;
+}
+
+td {
+    font-family: 'MontserratX';
+    font-weight: 100;
+    font-size: 0.55vw;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.statsTableContainer::-webkit-scrollbar {
+    width: 0.65vw;
+    border-radius: 30px;
+    background: rgba(11, 11, 11, 0.2);
+}
+
+.statsTableContainer::-webkit-scrollbar-track {
+    border-radius: 30px;
+}
+
+.statsTableContainer::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    border: 0.1vw solid rgba(134, 161, 255, 0.2);
+    background: rgba(11, 11, 11, 1);
+}
+
+.statsGraphicContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15.25vw;
+    height: 29.1vw;
+}
+
+.statsGraphic {
+    box-sizing: border-box;
+    padding-top: 2.13vw;
+    padding-bottom: 1.25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15.25vw;
+    height: 29.1vw;
+    background: rgba(9, 9, 9, 0.5);
+}
+
+.asksGraphic {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 9.6875vw;
+    height: 13.95vw;
+    margin-bottom: 2.6vw;
+}
+
+.graphicContainer {
+    display: flex;
+    flex-direction: column;
+    width: 4.58vw;
+    height: 13.95vw;
+    margin: 0 0.25vw;
+}
+
+.graphicBarContainer {
+    display: flex;
+    align-items: flex-end;
+    width: 1.35vw;
+    height: 11.71875vw;
+    margin: 0 auto;
+    background: #111;
+}
+
+.graphicBar {
+    width: 100%;
+    height: 8vw;
+}
+
+.graphicBar.accepted {
+    background: linear-gradient(180deg, #0E1234 0%, #2736B5 100%);
+}
+
+.graphicBar.declined {
+    background: linear-gradient(180deg, #1A4B4F 0%, #27ACB5 100%);
+}
+
+.graphicContainer h1:nth-child(2) {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 0.52vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.08vw;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 0.15625vw;
+}
+
+.statsGraphic > h1 {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 1.3vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.3vw;
+    letter-spacing: 0.2vw;
+    text-transform: uppercase;
+}
+
+.statsGraphic:nth-child(1) > h1 {
+    margin-bottom: 2.4vw;
+}
+
+.statsGraphic > h1 span {
+    color: #FFF;
+    font-family: MontserratX;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2vw;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.dynamometerModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    height: 100vh;
+}
+
+.dynamometer {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 1vw;
+    padding-left: 2.7vw;
+    padding-right: 2.7vw;
+    width: 40vw;
+    height: 10vw;
+    margin-top: 3vw;
+    border-radius: 1px;
+    background: linear-gradient(90deg, #151516 0%, rgba(0, 0, 0, 0.00) 100%), rgba(21, 21, 22, 0.70);
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 1vw;
+    margin-bottom: 0.5vw;
+}
+
+.legend h1 {
+    font-family: Gotham;
+    text-transform: uppercase;
+    font-size: 0.52vw;
+    font-weight: 300;
+    margin-left: 0.57vw;
+    line-height: 0.55vw;
+    letter-spacing: 0.05vw;
+    margin-right: 3.125vw;
+    color: #FFF;
+}
+
+.indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 7vw;
+}
+
+.indicator p {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 0.46vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+    margin-bottom: 0.15vw;
+    color: #FFF;
+}
+
+.indicatorColor {
+    width: 2vw;
+    height: 0.26vw;
+}
+
+.dynamometerContainer {
+    width: 34.79vw;
+    height: 7vw;
+}
+
+.dynamometerContainer::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 0.57vw;
+    height: 10vw;
+    background: rgba(39, 54, 181, 0.60);
+}
+
+.dynamometerButtons {
+    display: flex;
+    width: 40vw;
+    height: 2.15vw;
+    margin-top: 0.5vw;
+}
+
+.buttonIcon {
+    width: 1.66vw;
+    height: 1.66vw;
+    border-radius: 5px;
+    margin-right: 0.3vw;
+    border: 1px solid rgba(39, 54, 181, 0.2);
+    background: rgba(39, 54, 181, 0.60);
+}
+
+.buttonIcon h1 {
+    font-family: 'GothamL';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.9vw;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.buttonIcon:nth-child(1) h1 {
+    font-size: 0.65vw;
+}
+
+.buttonAction h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 0.55vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+}
+
+.buttonAction {
+    width: 3.75vw;
+    height: 1.61vw;
+    margin-right: 0.7vw;
+    border-radius: 0.15vw;
+    border: 0.05vw solid rgba(21, 21, 22, 0.20);
+    background: rgba(21, 21, 22, 0.90);
+}
+
+img[src="./assets/cronometerIcon.svg"] {
+    width: 1.25vw;
+    margin-top: 0.1vw;
+    margin-right: 0.05vw;
+}
+
+.alertModals {
+    width: 100vw;
+    height: 100vh;
+}
+
+.insufficientMoney,
+.modificationsApplied,
+.successfulWithdrawal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 2vw;
+    width: 26.5vw;
+    height: 18.5vw;
+    border-radius: 10px;
+    background: rgba(15, 15, 15, 0.5);
+}
+
+img[src="./assets/declinedIcon.svg"] {
+    width: 6vw;
+}
+
+.insufficientMoney h1,
+.modificationsApplied h1,
+.successfulWithdrawal h1 {
+    font-family: 'Gotham';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    margin-bottom: 1vw;
+    letter-spacing: 0.15vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.modalBackButton {
+    width: 100%;
+    height: 4vw;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgba(27, 34, 92, 0.1) 0%, rgba(24, 40, 172, 0.5) 100%);
+}
+
+.modalBackButton:hover {
+    transition: 0.1s;
+    background: linear-gradient(180deg, rgba(27, 34, 92, 0.1) 0%, rgba(16, 36, 216, 0.5) 100%);
+}
+
+.modalBackButton h1 {
+    font-family: 'MontserratX';
+    font-size: 1.25vw;
+    margin: 0;
+}
+
+.cartItems {
+    box-sizing: border-box;
+    padding-top: 0.5vw;
+    width: 100%;
+    height: 100%;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 96%;
+    height: 6.35vw;
+    margin: 0 auto;
+    margin-bottom: 0.5vw;
+}
+
+.cartItem .itemPhoto {
+    display: grid;
+    place-items: center;
+    width: 6.35vw;
+    height: 6.35vw;
+    margin-left: 1.4vw;
+    background: rgba(4, 4, 4, 0.5);
+}
+
+.cartItem .itemPhoto img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.itemInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 13.9vw;
+    height: 2.7vw;
+}
+
+.cartItem > img {
+    height: 0.75vw;
+}
+
+.cartItem > img:hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+.itemInfos h1,
+.itemInfos h2 {
+    letter-spacing: 0.05vw;
+    text-align: right;
+}
+
+.itemInfos h1 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.15vw;
+    line-height: 1vw;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+.itemInfos h2 {
+    font-family: 'MontserratX';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 0.85vw;
+    line-height: 0.72vw;
+    letter-spacing: 0.05vw;
+    color: #FFFFFF;
+}
+
+.itemInfos h2 span {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    letter-spacing: 0.1vw;
+}
+
+#dynamometer {
+   color: #ffffff70;
+}
+
+
+.wheelColorMain {
+    box-sizing: border-box;
+    padding: 1.82vw 1.8vw;
+}
+
+.wheelColorMain h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1vw;
+    text-align: center;
+    letter-spacing: 0.1vw;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.wheelColorContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 100%;
+    height: 20.5vw;
+    overflow: scroll;
+}
+
+.wheelColorContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.colorPreset {
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0);
+    position: relative;
+    width: 3vw;
+    height: 2.86vw;
+    margin: 0.57vw 0.28vw;
+    border-radius: 5px;
+}
+
+.colorPreset::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #ffffff00 0%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+
+aside {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 18vw;
+    height: 3vw;
+    background: rgba(29, 29, 29, 0.8);
+
+    border-top: 7px solid transparent;
+    border-image: linear-gradient(90deg, rgba(55, 67, 171, 0.35) 0%, #3743AB 49.48%, rgba(55, 67, 171, 0.35) 100%);
+    border-image-slice: 1;
+
+    display: grid;
+    place-items: center;
+}
+
+aside h1 {
+    font-family: MontserratX;
+    color: #FFFF;
+    font-weight: 300;
+    font-size: .75vw;
+}
+
+aside span {
+    font-family: Gotham;
+    font-weight: 600;
+}
+
+.selectedWheelColor {
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.selectedWheelColor img,
+.pearlyColor img {
+    z-index: 1;
+    width: 1.2vw;
+    position: absolute;
+}
+
+.colorPickerContainer {
+    display: grid;
+    place-items: center;
+    width: 12.86vw;
+    height: 12.86vw;
+    margin: 0 auto;
+    margin-top: 1.45vw;
+    margin-bottom: 1.56vw;
+}
+
+.neonColor > h1 {
+    margin-top: 1vw;
+}
+
+#colorPalette,
+#colorPalette2 {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background: conic-gradient(
+      from 0deg,
+      red,
+      yellow,
+      lime,
+      aqua,
+      blue,
+      magenta,
+      red
+    ); */
+    /* transform: rotate(180deg); */
+    cursor: crosshair;
+    background-color: red;
+}
+
+#colorPalette img,
+#colorPalette2 img {
+    position: absolute;
+   /*  top: -14.4px;
+    right: -14.4px; */
+    width: 220px;
+    height: 220px;
+    pointer-events: none;
+    /* transform: rotate(-20deg); */
+    transform: rotate(160deg);
+    /* opacity: 0; */
+}
+
+#selectedColor {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    border: 1px solid #000;
+}
+
+#indicator,
+#indicator2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border-radius: 50%;
+    top: 6.2vw;
+    right: 6.2vw;
+    border: 1px solid white;
+    position: absolute; 
+    /* Posição absoluta para que possamos definir a posição correta */
+    pointer-events: none; /* Evita que a bolinha afete os eventos de clique do colorPalette */
+}
+
+.neonColor:nth-child(2) {
+    height: 26.8vw;
+}
+
+.neonColor .sendColor {
+    width: 8.28vw;
+    height: 2.23vw;
+    margin: 0 auto;
+}
+
+.neonColor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.neonColor .sendColor h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.75vw;
+    letter-spacing: 0.1vw;
+    line-height: 2.3vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.mechanicManagerContainer ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mechanicManagerContainer li:nth-child(2),
+.mechanicManagerContainer li:nth-child(1) {
+    margin-right: 0.83vw;
+}
+
+.cartItem .itemPhoto img {
+    width: 4vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.align-center {
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gridCenter {
+    display: grid;
+    place-items: center;
+}
+
+
+@font-face {
+    font-family: 'Gotham';
+    src: url(assets/Gotham-Font/GothamMedium.ttf);
+}
+
+@font-face {
+    font-family: 'GothamB';
+    src: url(assets/Gotham-Font/Gotham-Bold.otf);
+}
+
+@font-face {
+    font-family: 'GothamX';
+    src: url(assets/Gotham-Font/Gotham-XLight.otf);
+}
+
+@font-face {
+    font-family: 'GothamL';
+    src: url(assets/Gotham-Font/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: 'GothamI';
+    src: url(assets/Gotham-Font/Gotham-BookItalic.otf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/MontserratRegular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratL';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/MontserratLight.otf) format('OpenType'); /* Tem que mudar diretório */
+}
+
+@font-face {
+    font-family: 'MontserratX';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/montserrat-extralight.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratExtraBold';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/MontserratExtraBold.otf) format('OpenType');
+}
+
+@font-face {
+    font-family: 'MontserratB';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/MontserratBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'MontserratT';
+    src: url(https://trigueirotech.com.br/fonts/Montserrat/MontserratHairline.otf) format('OpenType');
+}

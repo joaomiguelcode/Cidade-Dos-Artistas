@@ -1,0 +1,260 @@
+* {
+    user-select: none;
+}
+
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.hockeyui {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.frame {
+    padding: 0px;
+    margin: 0px;
+    opacity: 0.0;
+    
+}
+
+.countdown2 {
+    width: 15vh;
+    height: 15vh;
+    left: calc(50% - 7.5vh);
+    top: calc(50% - 7.5vh);
+    background-color: #fcdb7cb3;
+    border-radius: 10vh;
+    position: absolute;
+    z-index: 99;
+    color: white;
+    font-size: 10vh;
+    line-height: 14vh;
+    text-align: center;
+    font-family: "pricedown3.ttf";
+}
+
+.wasted {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: calc(50% - 5vh);
+
+    background-image: url('wasted.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 10vh;
+    line-height: 20vh;
+    text-align: center;
+    font-family: "pricedown3.ttf";
+    scale: 1.2;
+}
+
+.gameinfo {
+    min-width: 15.5vw;
+    height: auto;
+    position: absolute;
+    z-index: 99;
+    left: 2.8vw;
+    top: calc(3.8vh + 0vh);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.gameinfo .row {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    height: 3.6vh;
+    padding-left: 0.5vw;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.2vh;
+}
+
+.gameinfo .actionrow {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.3vh;
+    color:rgb(255, 255, 255);
+    line-height:  3.0vh;
+    height: 3.0vh;
+    padding-left: 0.5vw;
+    text-align: center;
+    z-index: 99;
+    background: linear-gradient(0.25turn, #e16816c1, #3ac19fdb);
+    margin-bottom: 0.2vh;
+}
+
+
+.gameinfo .littlerow {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.0vh;
+    color:rgba(255, 255, 255, 0.7);
+    line-height:  2.0vh;
+    height: 2.1vh;
+    padding-left: 0.5vw;
+    z-index: 99;
+    background: linear-gradient(0.25turn, #00000089, #ffffff00);
+    margin-bottom: 0.2vh;
+}
+
+.gameinfo .rowmine {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    background-color: white;
+    color: black;
+    height: 3.6vh;
+    padding-left: 0.5vw;
+    z-index: 99;
+    margin-bottom: 0.2vh;
+}
+
+.gameinfo .scorebox {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    background-color: rgba(239, 102, 34, 1.0);
+    height: 3.6vh;
+    width: 3.6vh;
+    z-index: 99;
+    float: right;
+    color: white;
+    text-align: center;
+}
+
+.gameinfo .notifybox {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    background-color: rgb(85, 190, 146);
+    height: 3.6vh;
+    width: 3.6vh;
+    z-index: 99;
+    float: right;
+    color: white;
+    text-align: center;
+}
+
+.gameinfo .red {
+    background-color: rgba(181, 0, 0, 0.4);
+}
+
+.gameinfo .gray {
+    background-color: rgba(0, 181, 0, 0.3);
+}
+
+.gameinfo .right {
+    float: right;
+    display: inline-flex;
+    padding-right: 0.5vw;
+}
+
+.gameinfo .mug {
+    vertical-align: middle;
+    display: inline-flex;
+    width: 3.6vh;
+    height: 3.6vh;
+    margin-left: -0.5vw;
+    margin-top: -0.2vh;
+}
+
+.row p {
+    display: contents;
+    margin: 0;
+    text-overflow: ellipsis;
+}
+
+.loadingbar p {
+    display: contents;
+    margin: 0;
+}
+
+.rowmine p {
+    display: contents;
+    margin: 0;
+}
+
+.gameinfo .paddle {
+
+    width: 1.3vh;
+    height: 1.3vh;
+    border: 2px solid black;
+    border-radius: 1.6vh;
+    margin-top: 0.9vh;
+}
+
+.gameinfo .p1icon {
+    background-color: rgba(0, 136, 255, 0.8);
+}
+
+.gameinfo .p2icon {
+    background-color: rgba(45, 221, 98, 0.8);
+}
+
+.gameinfo .p3icon {
+    background-color: rgba(221, 45, 45, 0.8);
+}
+
+.gameinfo .p4icon {
+    background-color: rgba(221, 104, 45, 0.8);
+}
+
+.gameinfo .p5icon {
+    background-color: rgba(57, 57, 57, 0.8);
+}
+
+.gameinfo .p6icon {
+    background-color: rgba(108, 23, 134, 0.8);
+}
+
+.gameinfo .p7icon {
+    background-color: rgba(242, 102, 246, 0.8);
+}
+
+.gameinfo .p8icon {
+    background-color: rgba(23, 23, 23, 0.8);
+}
+
+.loadingbar {
+    min-width: 3vw;
+    height: 3.5vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.3vh;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    position: absolute;
+    margin: 3vh;
+    color: white;
+
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    padding: 0 1vh 0 1vh;
+}
+
+.loadingbar img {
+    vertical-align: middle;
+    display: inline;
+    height: 2vh;
+    width: 2vh;
+    margin-top: -0.3vh;
+    margin-right: 0.5vh;
+}
+
+@font-face {
+    font-family: "pricedown3.ttf";
+    src: url("pricedown3.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "ChaleLondonNineteenEighty.ttf";
+    src: url("ChaleLondonNineteenEighty.ttf") format("truetype");
+}

@@ -1,0 +1,2111 @@
+:root {
+  --white-color: rgb(255, 255, 255);
+
+  --text-color-type1: rgba(255, 255, 255, 0.06);
+  --text-color-type2: rgb(148, 148, 148);
+  --text-color-type3: rgb(167, 255, 153);
+
+  --background-color-type1: rgba(255, 255, 255, 0.02);
+  --background-color-type2: rgba(38, 38, 38, 0.5);
+  --background-color-type3: rgba(0, 0, 0, 0.15);
+
+  --shadow-type1: 0px 0px 10px rgba(167, 255, 153, 0.42);
+  --shadow-type2: 0px 0px 10px rgba(255, 255, 255, 0.42);
+
+  --transition-time: 0.4s;
+}
+
+html {
+  font-size: 90%;
+
+  @media screen and (max-width: 1900px) {
+    font-size: 60%;
+  }
+
+  @media screen and (max-width: 1800px) {
+    font-size: 55%;
+  }
+
+  @media screen and (max-width: 1650px) {
+    font-size: 50%;
+  }
+
+  @media screen and (max-width: 1480px) {
+    font-size: 45%;
+  }
+
+  @media screen and (max-width: 1320px) {
+    font-size: 40%;
+  }
+
+  @media screen and (max-width: 1180px) {
+    font-size: 35%;
+  }
+
+  @media screen and (max-width: 1030px) {
+    font-size: 30%;
+  }
+
+  @media screen and (max-width: 892px) {
+    font-size: 27%;
+  }
+
+  @media screen and (min-aspect-ratio: 21/9) {
+    font-size: 107.5%;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+Org_Manager * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif, Arial, Helvetica;
+}
+
+Org_Manager .Container_XL {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(35, 35, 35, 0.6) 0%,
+    rgba(10, 10, 10, 0.8) 100%
+  );
+  color: var(--white-color);
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  padding: 2.5em;
+}
+
+Org_Manager .Back_Main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1670px;
+  max-height: 910px;
+  border-radius: 25px;
+  background-color: rgba(20, 20, 20, 0.92);
+  z-index: 2;
+  /* background-image: url('assets/Rectangle2.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover; */
+}
+
+/* ---------------------- HEADER ---------------------- */
+
+Org_Manager .Header_Container {
+  display: flex;
+  min-height: 8.2em;
+  max-height: 8.5em;
+  min-width: 100%;
+  margin-bottom: 3.8%;
+  z-index: 10;
+}
+
+Org_Manager .Header_Container .Header_Main_Box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-type1);
+  border-radius: 25px 0 25px 0;
+  min-width: 92%;
+  padding: 0 2.5em;
+}
+
+Org_Manager .Header_Container .Header_Main_Box .nav_img {
+  cursor: pointer;
+  height: 100%;
+}
+
+Org_Manager .Header_Container .Header_Main_Box .nav_img img {
+  height: 100%;
+}
+
+Org_Manager .Header_Container .header_closebox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+Org_Manager .Header_Container .header_closebox svg {
+  cursor: pointer;
+  transition: var(--transition-time);
+  box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+Org_Manager .Header_Container .header_closebox svg:hover {
+  box-shadow: 0px 0px 38px rgba(255, 0, 0, 0.45);
+}
+
+Org_Manager .Header_Container .header_closebox svg path {
+  stroke: #e72c2c;
+}
+
+Org_Manager .Header_Container .Header_Main_Box .nav_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--background-color-type3);
+  border-radius: 10px;
+  padding: 1em 1.5em;
+  margin: 0 0.5em;
+  z-index: 2;
+}
+
+Org_Manager .Header_Container .Header_Main_Box .nav_box .ip_box {
+  display: grid;
+  place-items: center;
+  grid-auto-flow: column;
+  text-align: center;
+  text-align: center;
+  cursor: pointer;
+  height: 58%;
+}
+
+Org_Manager .Header_Main_Box .nav_box .ip_box p:not(:last-child) {
+  margin: 0 0.5em 0 0.3em;
+}
+
+Org_Manager .Header_Main_Box .nav_box .ip_box:not(:last-child) {
+  border-right: 2px solid rgba(38, 38, 38);
+  padding-right: 1.2em;
+}
+
+Org_Manager .Header_Main_Box .nav_box .ip_box:not(:first-child) {
+  padding-left: 1.2em;
+}
+
+Org_Manager .Header_Main_Box .nav_box .ip_box p {
+  font-size: 1.56rem;
+  font-weight: 800;
+  text-align: center;
+  padding-left: 0.5em;
+  color: var(--text-color-type1);
+}
+
+Org_Manager .Header_Main_Box .nav_box .ip_box svg,
+.Header_Main_Box .nav_box .ip_box svg path {
+  width: 2.3em;
+  height: auto;
+  fill: var(--text-color-type1);
+}
+
+Org_Manager .Header_Container .Header_Main_Box .nav_box .ip_box > * {
+  transition: var(--transition-time);
+}
+
+/* ------ HOVER E FOCUS DA NAVEGATION BAR ------ */
+
+/* Org_Manager .Header_Main_Box .nav_box .ip_box:hover p, Org_Manager .Header_Main_Box .nav_box .ip_box:hover svg, Org_Manager .Header_Main_Box .nav_box .ip_box:hover svg path {
+
+    color: var(--text-color-type2);
+    text-decoration-line: underline;
+    fill: var(--text-color-type2);
+
+} */
+
+Org_Manager .Header_Main_Box .nav_box .activated * {
+  color: var(--white-color) !important;
+  text-decoration-line: underline;
+  fill: var(--white-color) !important;
+}
+
+Org_Manager input {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* ------ BACKGROUNDS PRINCIPAIS 1,2,3 - TELA BLOQUEADA - SCROLL ------ */
+
+Org_Manager .Container_Membros,
+Org_Manager .Container_Parcerias {
+  position: relative;
+  background-color: var(--background-color-type1);
+  border-radius: 15px 15px 0 0;
+  padding: 1.5em 1.5em 0 1.5em;
+  width: 100%;
+}
+
+Org_Manager .Main_Container {
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 3rem;
+  position: relative;
+}
+
+Org_Manager .background_lvl2 {
+  background-color: transparent; /* var(--background-color-type3) */
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  padding: 1.25em 1.25em 1.5em 1.25em;
+}
+
+Org_Manager .background_lvl3 {
+  background-color: var(--background-color-type2);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+Org_Manager .Block_Page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(30px);
+  z-index: 20;
+  cursor: none;
+}
+
+Org_Manager .Block_Page svg {
+  width: 6em;
+  stroke: #e72c2c;
+  fill: #3f1919;
+  filter: drop-shadow(0px 0px 41px #e72c2c);
+}
+
+Org_Manager .Block_Page h1 {
+  margin-top: 0.5em;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e72c2c;
+}
+
+/* --- SCROLL --- */
+
+Org_Manager *::-webkit-scrollbar {
+  width: 3px;
+}
+
+Org_Manager *::-webkit-scrollbar-track {
+  background-color: rgba(247, 247, 247, 0.02);
+  border-radius: 1em;
+}
+
+Org_Manager *::-webkit-scrollbar-thumb {
+  background-color: rgba(247, 247, 247, 0.1);
+  border-radius: 1em;
+}
+
+/* ------------ */
+
+/* -------------- CONTAINER MEMEBROS - PAGE 1 -------------- */
+
+Org_Manager .Container_Membros {
+  display: grid;
+  position: relative;
+  grid-template-columns: 0.92fr 2fr;
+  grid-template-rows: auto;
+  gap: 1.2em;
+  height: 100%;
+  max-height: 100%;
+  min-width: 85em;
+}
+
+Org_Manager .Container_Membros .mmbtg_container {
+  display: grid;
+  background-color: var(--background-color-type3);
+  border-radius: 10px 10px 0 0;
+  max-height: 100%;
+  padding: 1.25em 1.25em 1.5em 1.25em;
+}
+
+Org_Manager .Container_Membros .container_btexts {
+  justify-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+Org_Manager .Container_Membros .container_btexts .inptexts_aside {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+  width: 24em;
+  min-width: 100%;
+  gap: 1.2em;
+  /* overflow: auto; */
+}
+
+Org_Manager .Container_Membros .container_btexts .input_tblocks {
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  width: 100%;
+}
+
+Org_Manager .Container_Membros .container_btexts .input_tblocks textarea {
+  font-style: normal;
+  font-weight: 600;
+  background-color: transparent;
+  letter-spacing: 0.1em;
+  min-width: 100%;
+  min-height: 5.8em;
+  padding: 0.65em 0.65em 0 0.65em;
+  color: var(--white-color);
+  font-size: 0.82rem;
+}
+
+Org_Manager .Container_Membros .container_btexts .fix_border {
+  width: 85%;
+  height: 2px;
+  background-color: var(--background-color-type3);
+}
+
+Org_Manager .Container_Membros .container_btexts .flex_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0 0.25em 0.25em 0;
+  overflow: auto;
+}
+
+Org_Manager .Container_Membros .container_btexts .flex_btn button {
+  background-color: var(--background-color-type2);
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  color: var(--white-color);
+  padding: 0.52em 0.85em;
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  transition: var(--transition-time);
+  font-weight: 600;
+}
+
+Org_Manager .Container_Membros .container_btexts .flex_btn button:hover {
+  background-color: #a7ff99;
+  color: rgb(25, 25, 25);
+}
+
+Org_Manager .Container_Membros .container_btexts .inptexts_aside h1 {
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  font-weight: 900;
+}
+
+Org_Manager .Container_Membros .container_btexts .p_blocks {
+  display: grid;
+  gap: 0.9em;
+  width: 100%;
+}
+
+Org_Manager .Container_Membros .container_btexts .announcement_block {
+  position: relative;
+  background-color: var(--background-color-type2);
+  padding: 0.5em 0.8em;
+  width: 100%;
+  min-height: 6.2em;
+  max-height: 6.5em;
+  border-radius: 6px;
+  text-align: start;
+  /* overflow: auto; */
+}
+
+Org_Manager .Container_Membros .container_btexts .announcement_block span {
+  font-size: 0.82rem;
+  width: 100%;
+  height: 100%;
+}
+
+Org_Manager .Container_Membros .container_btexts .fixed_block {
+  height: 100%;
+  min-height: 7.2em;
+}
+
+Org_Manager .Container_Membros .MM_Container {
+  grid-template-rows: auto auto 1fr;
+  gap: 1em;
+}
+
+Org_Manager .Container_Membros .MM_Container .mm_navheader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+}
+
+Org_Manager .Container_Membros .MM_Container .online_number {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  padding: 0.4em 0.8em 0.4em 0.6em;
+  width: 35%;
+  min-width: 202px;
+  max-width: 16em;
+}
+
+Org_Manager .Container_Membros .MM_Container .online_number svg {
+  min-width: 38px;
+  margin-right: 0.5em;
+}
+
+Org_Manager .Container_Membros .MM_Container .online_number svg path {
+  stroke: var(--text-color-type3);
+}
+
+Org_Manager .Container_Membros .MM_Container .online_number span {
+  font-size: 1.18rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+Org_Manager .Container_Membros .MM_Container .btn_contratar svg {
+  width: 1.3em;
+  height: 1.3em;
+  fill: var(--text-color-type3);
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Membros .MM_Container .btn_contratar svg:hover {
+  fill: var(--white-color);
+  filter: drop-shadow(var(--shadow-type2));
+}
+
+Org_Manager .Container_Membros .MM_Container .btn_contratar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--background-color-type2);
+  padding: 0.1em 0.9em 0 0;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Membros .MM_Container .input_xlspace {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+Org_Manager .Container_Membros .MM_Container .input_xlspace input {
+  background-color: var(--background-color-type2);
+  border: transparent;
+  border-radius: 6px 0 0 6px;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  padding: 0 0.8em 0 2em;
+  color: var(--white-color);
+}
+
+Org_Manager .Container_Membros .MM_Container .list_titles {
+  display: grid;
+  grid-template-columns: 25.2% 20% 28% 1fr; /* SORRY! */
+  margin-top: 0.85em;
+  margin-left: 0.6em;
+}
+
+Org_Manager .Container_Membros .MM_Container .list_titles:nth-child(1) {
+  margin-left: 2.15em;
+}
+
+Org_Manager .Container_Membros .MM_Container .list_titles h2 {
+  font-size: 1.08rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  padding-right: 0.4em;
+}
+
+Org_Manager .Container_Membros .MM_Container .organize_title > * {
+  transition: var(--transition-time);
+  cursor: pointer;
+}
+
+Org_Manager .Container_Membros .MM_Container .organize_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+Org_Manager .Container_Membros .MM_Container .organize_title:nth-child(1) {
+  padding-left: 2.22em;
+}
+
+Org_Manager .Container_Membros .MM_Container .organize_title:not(:last-child) {
+  justify-self: flex-start;
+}
+
+/* -------- ROTAÇÃO DO ICONE DE FILTRO DA TABELA -------- */
+Org_Manager .arrow_rotate svg {
+  transform: rotate(180deg);
+}
+/* ------------------------------------------------------ */
+
+Org_Manager .Container_Membros .MM_Container .Cont_GBox {
+  position: relative;
+  width: 100%;
+  max-height: 31.2em;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+Org_Manager .Container_Membros .MM_Container .gbox_list {
+  display: grid;
+  grid-template-columns: 3.2fr 1fr;
+  grid-template-rows: auto;
+  width: 100%;
+  padding-right: 5px;
+  border-radius: 6px;
+  overflow-y: auto;
+}
+
+Org_Manager .Container_Membros .MM_Container .block_lists {
+  display: grid;
+  position: relative;
+  grid-auto-rows: minmax(0, 3em);
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  padding: 0.65em 1em;
+  gap: 1em;
+}
+
+Org_Manager .Container_Membros .MM_Container .block_mlists {
+  margin-right: 0.75em;
+}
+
+Org_Manager .Container_Membros .MM_Container .Block_Clists {
+  grid-template-columns: 1fr;
+  margin-right: 4px;
+}
+
+Org_Manager .Block_Clist {
+  display: grid;
+  grid-template-columns: 1.3fr 1.15fr 1fr auto;
+  grid-auto-columns: auto;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+  width: 100%;
+  grid-column: span 4;
+  padding: 0 1.2em;
+  max-height: 3.2em;
+}
+
+Org_Manager .Container_Metas .Block_Clist {
+  max-width: 7.8em;
+  padding-top: 0.45em;
+  padding-bottom: 0.45em;
+  margin-top: 0.15em;
+}
+
+Org_Manager .Container_Metas .Block_Clist select {
+  min-width: 6.2em !important;
+}
+
+Org_Manager .Container_Membros .MM_Container .Block_Clists .Block_Clist {
+  display: flex;
+}
+
+Org_Manager .Block_Date input {
+  cursor: pointer;
+  color: var(--white-color) !important;
+  min-width: 8.6em;
+}
+
+Org_Manager input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(1);
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l:nth-child(1) {
+  font-weight: 600;
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l svg {
+  cursor: pointer;
+  width: 1.1em;
+  height: 100%;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l svg path {
+  stroke: #858585;
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l svg:hover {
+  filter: drop-shadow(var(--shadow-type2));
+}
+
+Org_Manager .Container_Membros .MM_Container .circle_onoff {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 2em;
+  border-radius: 50%;
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l .on {
+  background: var(--text-color-type3);
+  box-shadow: var(--shadow-type1);
+}
+
+Org_Manager .Container_Membros .MM_Container .info_l .off {
+  background: #ff9999;
+  box-shadow: 0px 0px 10px rgba(255, 153, 153, 0.42);
+}
+
+Org_Manager .Container_Membros .btn_fixar {
+  position: absolute;
+  margin: 0 auto;
+  width: 1.1em;
+  height: 1.1em;
+  top: -6.5px;
+  left: -6.5px;
+  transition: var(--transition-time);
+  background-color: var(--background-color-type2);
+  border: 6px solid var(--background-color-type1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Membros .btn_fixar svg {
+  position: absolute;
+  top: -10px;
+  left: -13px;
+  width: 2em;
+  height: 1.6em;
+}
+
+Org_Manager .Container_Membros .btn_fixar:hover {
+  opacity: 0.5;
+}
+
+Org_Manager ul,
+Org_Manager li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+Org_Manager textarea,
+Org_Manager textarea:focus,
+Org_Manager input:focus,
+Org_Manager select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+  resize: none;
+}
+
+Org_Manager select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  border-color: transparent;
+  background-color: transparent;
+  color: var(--white-color) !important;
+  font-size: 1.12rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-image: url("assets/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+Org_Manager select option {
+  background-color: rgb(50, 50, 50);
+  color: var(--white-color);
+  cursor: pointer;
+  font-weight: 500;
+  z-index: 2;
+  border: none;
+}
+
+Org_Manager select option:checked {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+/* ------- REQUEST DA PRIMEIRA TELA ------- */
+
+Org_Manager .Cont_Request_Infos {
+  min-height: 32em;
+  max-width: 38em;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Cont_Request_Infos .Infos_Player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color-type3);
+  padding: 1.2em;
+  border-radius: 6px;
+  margin: 1em 0 1.5em 0;
+}
+
+Org_Manager .Cont_Request_Infos .block_Text_Info {
+  text-align: start;
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+Org_Manager .Cont_Request_Infos .block_Text_Info p {
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+}
+
+Org_Manager .Cont_Request_Infos .block_Text_Info span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: text;
+}
+
+Org_Manager .Cont_Request_Infos .Background_Infos_Notify {
+  width: 100%;
+  background-color: var(--background-color-type1);
+  padding: 1.5em;
+  border-radius: 1em;
+}
+
+Org_Manager .Cont_Request_Infos .Background_Infos_Notify > h1 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-align: start;
+}
+
+Org_Manager .Cont_Request_Infos .Btns_RC {
+  font-size: 1.2rem;
+  padding: 0.52em 0;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btn_Remover {
+  background: rgba(255, 0, 0, 0.2);
+  margin-right: 0.8em;
+  box-shadow: 0 0 12px 0 rgba(255, 0, 0, 0.25);
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btn_Remover p {
+  text-shadow: 0 0 15px rgb(255, 0, 0);
+  color: rgb(255, 41, 41);
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btn_Cancelar {
+  margin-left: 0.8em;
+  background-color: transparent;
+  box-shadow: 0 0 12px 0 rgba(56, 56, 56, 0.3);
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btn_Cancelar:hover {
+  background-color: var(--background-color-type1);
+}
+
+Org_Manager .Cont_Request_Infos .Request_Btn_Remover:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+/* --------------------------------------- */
+
+/* -------------- CONTAINER MEMEBROS - PAGE 2 -------------- */
+
+Org_Manager .Container_Metas .box_metas_principal,
+Org_Manager .Container_Metas .Box_Metas_Edit {
+  display: grid;
+  justify-content: center;
+  gap: 2.6em;
+  height: 82%;
+}
+
+Org_Manager .Container_Metas .box_metas_principal {
+  overflow: hidden;
+}
+
+Org_Manager .Container_Metas .infos_metas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* grid-template-columns: repeat(3, 1fr);
+    gap: 13.5em; */
+  margin: 0 4em 0 1.8em;
+}
+
+Org_Manager .Container_Metas .edit_icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+Org_Manager .Container_Metas .edit_icon svg {
+  width: 1.8em;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Metas .edit_icon svg path {
+  stroke: var(--text-color-type3);
+  fill: transparent;
+}
+
+Org_Manager .Container_Metas .edit_icon:hover svg path {
+  stroke: var(--white-color);
+}
+
+Org_Manager .Container_Metas .box_vmetas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+Org_Manager .Container_Metas .box_vmetas h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 0.4em;
+}
+
+Org_Manager .Container_Metas .circle_days {
+  width: 1em;
+  height: 1em;
+  background-color: transparent;
+  border: 2px solid var(--text-color-type1);
+  border-radius: 50%;
+  margin-bottom: 6px;
+  z-index: 10;
+}
+
+/* ----- DIA DA SEMANA ATIVADO ----- */
+
+Org_Manager .Container_Metas .box_days .on {
+  background-color: var(--text-color-type3);
+  box-shadow: 0px 0px 9px var(--shadow-type1);
+  border: 2px solid var(--text-color-type3);
+}
+
+Org_Manager .Container_Metas .box_days .on + p {
+  color: var(--text-color-type3);
+  text-shadow: var(--shadow-type1);
+}
+
+Org_Manager .Container_Metas .num_pontos {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 0.8em;
+  color: var(--text-color-type3);
+}
+
+Org_Manager .Container_Metas .box_prog p > span {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  font-size: 0.7rem;
+  line-height: 0.1em;
+}
+
+Org_Manager .Container_Metas .box_prog span {
+  color: var(--text-color-type3);
+  font-weight: 500;
+  font-size: 0.62rem;
+  margin-top: 3px;
+  z-index: 5;
+  background-color: var(--background-color-type2);
+}
+
+Org_Manager .Container_Metas .box_dwm {
+  /* display: grid;
+    grid-template-columns: minmax(12em, auto) repeat(3, auto); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: var(--background-color-type3);
+  width: 100%;
+  min-width: 920px;
+  height: 7.5em;
+  padding: 1em 2.5em 1em 3.5em;
+  box-shadow: var(--text-color-type3);
+  border-radius: 6px;
+  gap: 3em;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Metas .Box_Missao_Concluida {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 50;
+  border-radius: 6px;
+  left: 0;
+}
+
+Org_Manager .Container_Metas .Box_Missao_Concluida p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-color-type3);
+  box-shadow: var(--text-color-type3);
+}
+
+Org_Manager .Container_Metas .Box_Missions {
+  display: grid;
+  gap: 1.25em;
+  width: 100%;
+  height: 100%;
+  min-height: 12em;
+  max-height: 34em !important;
+  min-width: 912px;
+  padding-right: 4px;
+  overflow-y: scroll;
+}
+
+Org_Manager .margin_g {
+  margin-bottom: 1.25em;
+}
+
+Org_Manager .Container_Metas .close_delete {
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Metas .close_delete svg {
+  width: 2em;
+  transition: var(--transition-time);
+  stroke: var(--background-color-type3);
+  fill: var(--white-color);
+}
+
+Org_Manager .Container_Metas .close_delete:hover svg {
+  /* filter: drop-shadow(var(--shadow-type2)); */
+  fill: var(--text-color-type3);
+}
+
+Org_Manager .Container_Metas .checked_on svg {
+  transition: var(--transition-time);
+  fill: var(--text-color-type3) !important;
+}
+
+Org_Manager .Container_Metas .box_rtext input[type="text"] {
+  padding: 0.78em 0 0.5em 0;
+}
+
+Org_Manager .Container_Metas .box_rtext {
+  text-align: start;
+}
+
+Org_Manager .Container_Metas .box_rtext h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.55rem;
+  white-space: nowrap;
+  margin-bottom: 0.25em;
+}
+
+Org_Manager .Container_Metas .box_rtext span {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Metas .box_rtext span > span {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+Org_Manager .Container_Metas .box_pontos {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: var(--text-color-type3);
+  color: #43693c;
+  padding: 0.2em;
+  border-radius: 3px;
+  bottom: 10px;
+  left: 10px;
+}
+
+Org_Manager .Container_Metas .box_pontos span {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+Org_Manager .Container_Metas .box_empty h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--text-color-type1);
+}
+
+/* --- PAGE 2 - EDIT OPEN --- */
+
+Org_Manager .Container_Metas .Box_Metas_Edit .box_rtext input {
+  color: var(--text-color-type3);
+  width: 100%;
+  letter-spacing: 0.5px;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+Org_Manager .Container_Metas .box_nedit {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 1.5em;
+}
+
+Org_Manager .Container_Metas .box_nedit h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+Org_Manager .Container_Metas .box_pl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4em;
+  border-radius: 6px;
+  background-color: var(--background-color-type3);
+  margin-right: 0.4em;
+}
+
+Org_Manager .Container_Metas .box_nummetas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 20em;
+}
+
+Org_Manager .Container_Metas p {
+  font-size: 0.7em;
+  text-align: start;
+}
+
+Org_Manager .Container_Metas .Box_Metas_Edit .close_delete svg {
+  width: 2.7em;
+  height: 2.7em;
+  stroke: #323232;
+  fill: rgba(255, 255, 255, 0.5);
+  background-color: transparent !important;
+  transition: var(--transition-time);
+}
+
+Org_Manager input[type="number"]::-webkit-inner-spin-button,
+Org_Manager input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ------ CONFIRMAÇÃO E FOCUS DE CONFIRMAÇÃO DAS INFOS ------ */
+
+Org_Manager .Container_Metas .Confirm_Edit_Focus svg path {
+  fill: var(--text-color-type3);
+  stroke: rgba(38, 38, 38, 0.65);
+  stroke-width: 1.55px;
+}
+
+Org_Manager .Container_Metas .Confirm_Edit_Focus svg {
+  filter: drop-shadow(var(--shadow-type1));
+}
+
+/* --------------------------------- */
+
+/* -------------- CONTAINER BANCO - PAGE 3 -------------- */
+
+Org_Manager .Container_Banco {
+  min-width: 1200px;
+}
+
+Org_Manager .Container_Banco .Box_Banco_Principal {
+  display: grid;
+  grid-template-columns: 1.2fr 2.2fr;
+  grid-template-rows: 1fr 1.38fr;
+  padding: 1.8em 1.6em;
+  gap: 2em;
+}
+
+Org_Manager .Container_Banco .Valor_Saldo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+Org_Manager .Container_Banco .Valor_Saldo h2 {
+  font-size: 2.26rem;
+  font-weight: 700;
+  padding-right: 0.8em;
+}
+
+Org_Manager .Container_Banco .Secret_Icone svg {
+  width: 1.8em;
+  fill: var(--white-color);
+}
+
+Org_Manager .Container_Banco .Secret_Icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+Org_Manager .Container_Banco .Box_Coluna_Primaria {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  grid-row: span 2;
+  min-width: 21.5em;
+}
+
+Org_Manager .Container_Banco .Block_Saldo_Conta {
+  width: 100%;
+  margin-bottom: 13%;
+}
+
+Org_Manager .Container_Banco .Block_Saldo_Conta h1,
+Org_Manager .Block_Cofre h1 {
+  text-align: start;
+  color: var(--text-color-type2);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 1.18rem;
+  margin-bottom: 1px;
+}
+
+Org_Manager .Container_Banco .Block_Extrato {
+  text-align: start;
+  width: 100%;
+}
+
+Org_Manager .Container_Banco .Barra_Pesquisa {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.4em;
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+}
+
+Org_Manager .Container_Banco .Back_Icon svg {
+  width: 1em;
+  fill: var(--white-color);
+}
+
+Org_Manager .Container_Banco .Back_Icon {
+  display: flex;
+  justify-content: center;
+  padding: 0 0.85em 0 0.6em;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Banco .Back_Input {
+  width: 100%;
+  height: 100%;
+  padding-left: 0.82em;
+}
+
+Org_Manager .Container_Banco .Back_Input input {
+  width: 100%;
+  height: 100%;
+  color: var(--white-color);
+}
+
+Org_Manager .Container_Banco .Box_Pesquisa {
+  margin-bottom: 0.9em;
+}
+
+Org_Manager .Container_Banco .Box_Pesquisa p {
+  font-size: 0.68rem;
+  margin-bottom: 0.6em;
+  margin-left: 2px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Banco .Titulo_Transacoes {
+  margin-bottom: 1em;
+  margin-left: 2px;
+}
+
+Org_Manager .Container_Banco .Titulo_Transacoes h1 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+Org_Manager .Container_Banco .Box_Transacoes {
+  padding: 1em 0.6em 1em 1em;
+  border-radius: 6px;
+  background-color: var(--background-color-type3);
+  min-height: 24em;
+}
+
+Org_Manager .Container_Banco .Icone_Entrada_Saida {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color-type2);
+  padding: 0.6em;
+  border-radius: 6px;
+  margin-right: 0.5em;
+}
+
+Org_Manager .Container_Banco .Icone_Entrada_Saida svg {
+  width: 1.15em;
+  fill: var(--text-color-type3);
+}
+
+Org_Manager .Container_Banco .Box_overflow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+Org_Manager .Container_Banco .Space__Flex {
+  display: flex;
+  margin-right: 1.2em;
+}
+
+Org_Manager .Container_Banco .Infos_Saida_Entrada {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+Org_Manager .Container_Banco .Infos_Saida_Entrada h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Banco .Infos_Saida_Entrada span {
+  font-size: 0.63rem;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Banco .Valor_Transacao span {
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+
+Org_Manager .Container_Banco .Block_Logs {
+  display: grid;
+  gap: 1.3em;
+  overflow: auto;
+  max-height: 17em;
+  padding-right: 0.5em;
+}
+
+Org_Manager .Container_Banco .Icone_Saida svg {
+  fill: #fa3b3b;
+  transform: rotate(180deg);
+}
+
+Org_Manager .Container_Banco .Box_Cofre {
+  display: grid;
+  grid-template-columns: 2fr 0.78fr;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+  padding: 0 3.2em 0 1.5em;
+  height: 100%;
+}
+
+Org_Manager .Container_Banco .Box_Movimentacoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+  height: 83%;
+  padding: 2em 1em 1.2em 6.5%;
+}
+
+Org_Manager .Container_Banco .Navegation_Movimentaçoes {
+  display: flex;
+  justify-content: space-around;
+  height: 18%;
+}
+
+Org_Manager .Container_Banco .Block_Assets {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: space-between;
+  grid-column: span 2;
+  width: 100%;
+}
+
+Org_Manager .Container_Banco .Valor_Cofre {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  /* justify-content: space-between; */
+  width: 100%;
+  margin-bottom: 0.65em;
+}
+
+Org_Manager .Container_Banco .Block_Cofre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+Org_Manager .Container_Banco .Block_Cofre p {
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Banco .Valor_Cofre h2 {
+  /* font-size: clamp(2.35rem, 2.2vw, 2.85rem); */
+  font-size: 2.7em;
+  margin-right: 0.3em;
+  font-weight: 800;
+}
+
+Org_Manager .Container_Banco .Block_Depositar_Sacar {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 0.8em;
+  gap: 0.6em;
+  width: 100%;
+}
+
+Org_Manager .Background_DS {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color-type2);
+  padding: 0.7em 1.1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Background_DS p {
+  text-align: center;
+  font-size: 0.96rem;
+  font-weight: 500;
+}
+
+Org_Manager .Background_DS:hover,
+Org_Manager .Container_Banco .Btn_Transacao:hover {
+  background-color: var(--text-color-type3);
+  color: #323232;
+}
+
+Org_Manager .Container_Banco .Box_Sub_Assets {
+  display: flex;
+}
+
+Org_Manager .Container_Banco .Assets_Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62em;
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+}
+
+Org_Manager .Container_Banco .Assets_Icon svg {
+  width: 1em;
+  fill: var(--white-color);
+  stroke: white;
+}
+
+Org_Manager .Container_Banco .Infos_Assets {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 0.5em;
+}
+
+Org_Manager .Container_Banco .Infos_Assets h1 {
+  font-size: 0.98rem;
+}
+
+Org_Manager .Container_Banco .Infos_Assets p {
+  font-size: 0.7rem;
+}
+
+Org_Manager .Container_Banco .Text_Button h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.26em;
+  color: var(--text-color-type1);
+}
+
+Org_Manager .Container_Banco .Underline_Border {
+  border-bottom: 2px solid var(--text-color-type1);
+  width: 65%;
+}
+
+Org_Manager .Container_Banco .Text_On h1 {
+  color: var(--white-color);
+}
+
+Org_Manager .Container_Banco .Text_On .Underline_Border {
+  border-bottom: 2px solid var(--white-color);
+  width: 65%;
+}
+
+Org_Manager .Container_Banco .Text_Button {
+  cursor: pointer;
+}
+
+Org_Manager .Container_Banco .Edit_Valor_Text {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 1.2em;
+}
+
+Org_Manager .Container_Banco .Edit_Valor {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+Org_Manager .Container_Banco .Edit_Valor_Text h1 {
+  font-size: 1.05rem;
+  color: var(--text-color-type2);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5em;
+}
+
+Org_Manager .Container_Banco .Edit_Valor input {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--white-color);
+  border-color: transparent;
+}
+
+Org_Manager .Container_Banco .Edit_Valor p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-right: 0.3em;
+}
+
+Org_Manager .Container_Banco .Edit_Valor input::placeholder {
+  font-size: 1.5rem;
+}
+
+Org_Manager .Container_Banco .Block_Infos_Edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-right: 2px solid var(--background-color-type1);
+  height: 100%;
+  width: 55%;
+  overflow: hidden;
+}
+
+Org_Manager .Container_Banco .Btn_Transacao {
+  background-color: var(--background-color-type2);
+  max-width: 11em;
+  padding: 0.6em 0;
+  bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Banco .Btn_Transacao p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+Org_Manager .Container_Banco .Sub_Infos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 5%;
+  margin-bottom: 0.6em;
+}
+
+Org_Manager .Container_Banco .Block_Sub_Info {
+  text-align: start;
+  white-space: nowrap;
+}
+
+Org_Manager .Container_Banco .Block_Sub_Info p {
+  font-size: 0.78rem;
+  margin-bottom: 2px;
+}
+
+Org_Manager .Container_Banco .Block_Sub_Info span {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+Org_Manager .Container_Banco .Block_Sub_Info span span {
+  font-weight: 400;
+}
+
+Org_Manager .Container_Banco .Block_Registros {
+  height: 100%;
+  /* width: 100%;
+    padding-left: 1em; */
+  min-width: 16em;
+}
+
+Org_Manager .Container_Banco .Descricao_Coluna {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8em;
+  padding: 0 1.8em 0 1em;
+}
+
+Org_Manager .Container_Banco .Descricao_Coluna p {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-color-type2);
+}
+
+Org_Manager .Container_Banco .Rows_Tabela {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 0.62em;
+  max-height: 8.5em;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+Org_Manager .Container_Banco .Infos_Movimentacoes {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  padding: 0.4em;
+}
+
+Org_Manager .Container_Banco .Infos_Movimentacoes span {
+  font-size: 0.62rem;
+  letter-spacing: 0.3px;
+}
+
+/* --------------------------------- */
+
+/* -------------- CONTAINER PARCERIAS - PAGE 4 -------------- */
+
+Org_Manager .Container_Parcerias .Block_Infos {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.14fr;
+  gap: 1em;
+}
+
+Org_Manager .Container_Parcerias .Add_Infos {
+  text-align: start;
+}
+
+Org_Manager .Container_Parcerias .Add_Infos_Check {
+  display: flex;
+  justify-content: space-between;
+}
+
+Org_Manager .Container_Parcerias .Add_Infos_Check input {
+  background-color: var(--background-color-type1);
+  width: 100%;
+  padding: 1em;
+  color: var(--white-color);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+Org_Manager .Container_Parcerias .Add_Infos h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3em;
+}
+
+Org_Manager .Block_Btn_Confirm {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+Org_Manager .Container_Parcerias .Btn_Add_Infos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color-type1);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0.3em 0.5em 0 0.5em;
+}
+
+Org_Manager .Container_Parcerias .Btn_Add_Infos:hover svg {
+  stroke: var(--white-color);
+}
+
+Org_Manager .Container_Parcerias .Btn_Add_Infos svg {
+  stroke: var(--text-color-type3);
+  width: 2.1em;
+  margin-bottom: 0.32em;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Parcerias .Box_Missions {
+  overflow: auto;
+  max-height: 25em;
+  padding-right: 6px;
+}
+
+.membersModalInput {
+  width: 100% !important;
+}
+
+/* -------------- CONTAINER SALÁRIO - PAGE 5 -------------- */
+
+Org_Manager .Container_Salario {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+Org_Manager .Container_Salario .Background_Search_Bar {
+  display: flex;
+  align-items: center;
+  margin-right: 0.85em;
+}
+
+Org_Manager .Container_Salario .Background_Search_Bar {
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  padding: 0.75em 0.8em 0.75em 1.2em;
+}
+
+Org_Manager .Container_Salario .Icon_Input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Salario .Text_Input input {
+  font-size: 0.92rem;
+  width: 44em;
+  height: 100%;
+  padding-right: 1em;
+}
+
+Org_Manager .Container_Salario .Icon_Input input {
+  height: 100%;
+  font-size: 1rem;
+}
+
+Org_Manager .Container_Salario .Icon_Input svg {
+  width: 1em;
+  fill: var(--text-color-type2);
+}
+
+Org_Manager .Container_Salario .Block_Search_Button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+Org_Manager .Container_Salario .Btn_New_Salario {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0.68em 0.85em;
+  background: linear-gradient(
+    180deg,
+    rgba(167, 255, 153, 0.18) 210.56%,
+    rgba(152, 255, 136, 0) 267.14%
+  );
+  border-left: 1px solid rgba(152, 255, 136, 0.2);
+  border-top: 1px solid rgba(152, 255, 136, 0.2);
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Salario .Btn_New_Salario:hover {
+  opacity: 0.8;
+}
+
+Org_Manager .Container_Salario .Btn_New_Salario p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  color: var(--text-color-type3);
+}
+
+Org_Manager .Container_Salario .Btn_New_Salario svg {
+  width: 1.38em;
+  stroke: var(--text-color-type3);
+  margin-right: 0.62em;
+}
+
+Org_Manager .Container_Salario .Top_Nav_List {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1em;
+  margin-left: 3.48em;
+}
+
+Org_Manager .Container_Salario .Title_Item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Salario .Title_Item svg {
+  width: 1em;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Salario #salario_salario {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 43.8%;
+}
+
+Org_Manager .Container_Salario .Title_Item h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+Org_Manager .Container_Salario .Box_List_Full {
+  width: 100%;
+}
+
+Org_Manager .Container_Salario .Row_Block {
+  display: flex;
+  justify-content: space-between;
+  /* display: grid;
+    grid-template-columns: minmax(auto, 11.5em) minmax(auto, .86fr) minmax(auto, 1.1fr) minmax(auto, 1fr) auto; */
+  align-items: center;
+  padding: 0 1.8em;
+  background-color: var(--background-color-type2);
+  border-radius: 6px;
+  height: 3.2em;
+  overflow: auto;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Container_Salario .Row_Block svg {
+  width: 1.2em;
+  stroke: var(--text-color-type3);
+  transition: var(--transition-time);
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+Org_Manager .Container_Salario .Row_Block svg:hover {
+  stroke: var(--white-color);
+}
+
+Org_Manager .Container_Salario .Row_Block span {
+  font-size: 1.06rem;
+  color: var(--text-color-type2);
+  min-width: 3.5em;
+  text-align: start;
+}
+
+Org_Manager .Container_Salario .Row_Block .weight {
+  font-weight: 700;
+}
+
+Org_Manager .Container_Salario .Box_List_Main {
+  background-color: var(--background-color-type2);
+  padding: 1.5em 1em 1.5em 1.5em;
+  border-radius: 6px;
+  min-height: 28.4em;
+}
+
+Org_Manager .Container_Salario .Box_List_CR {
+  display: grid;
+  grid-auto-rows: minmax(auto, 3em);
+  border-radius: 6px;
+  max-height: 25.2em;
+  padding-right: 0.85em;
+  gap: 1.2em;
+  overflow: auto;
+}
+
+/* ------- REQUEST DA ULTIMA TELA ------- */
+
+Org_Manager .Back_Main .Cont_Request_Value,
+Org_Manager .Back_Main .Box_Request_Value {
+  background-color: transparent !important;
+}
+
+Org_Manager .Cont_Request_Value .Block_Request_Slario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+Org_Manager .Cont_Request_Value .Block_Request_Slario p {
+  font-size: 0.68rem;
+  font-weight: 400;
+  margin-bottom: 0.55em;
+  padding-left: 2px;
+}
+
+Org_Manager .Cont_Request_Value .Box_Request_Value {
+  max-width: 31em;
+  height: 32em;
+}
+
+Org_Manager .Cont_Request_Value .Box_Request_Value h1 {
+  font-size: 0.78rem;
+  font-weight: 400;
+  margin-bottom: 2em;
+  letter-spacing: 0.3px;
+  line-height: 1.5em;
+  text-align: start;
+}
+
+Org_Manager .Cont_Request_Value .Block_Buttons_CC {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.2em;
+}
+
+Org_Manager .Cont_Request_Value .Input_Selector {
+  text-align: start;
+  margin-right: 0.7em;
+  border: none;
+  width: 30%;
+}
+
+Org_Manager .Cont_Request_Value .Back_Selector {
+  padding: 0 0.8em;
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+  height: 2.8em;
+}
+
+Org_Manager .Cont_Request_Value .Back_Selector select {
+  height: 2.5em;
+  width: 100%;
+  border: none;
+  color: var(--white-color);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+Org_Manager .Cont_Request_Value .Input_Text {
+  text-align: start;
+  width: 100%;
+}
+
+Org_Manager .Cont_Request_Value .Input_Text input {
+  background-color: var(--background-color-type3);
+  border-radius: 6px;
+  height: 3.36em;
+  width: 100%;
+  padding: 0 1em;
+}
+
+Org_Manager .Cont_Request_Value .Request_Btn_Add {
+  background: linear-gradient(
+    180deg,
+    rgba(167, 255, 153, 0.12) 210.56%,
+    rgba(152, 255, 136, 0) 267.14%
+  );
+  border-left: 1px solid #a7ff992e;
+  border-top: 1px solid #a7ff992e;
+  color: var(--text-color-type3);
+}
+
+Org_Manager .Cont_Request_Value .Request_Btn_Cancelar {
+  background-color: var(--background-color-type2);
+}
+
+Org_Manager .Cont_Request_Value .Request_Btn_Add,
+Org_Manager .Cont_Request_Value .Request_Btn_Cancelar {
+  width: 47%;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.75em 0;
+  transition: var(--transition-time);
+}
+
+Org_Manager .Cont_Request_Value .Request_Btn_Cancelar:hover {
+  background-color: var(--background-color-type3);
+}
+
+Org_Manager .Cont_Request_Value .Request_Btn_Add:hover {
+  background-color: rgba(167, 255, 153, 0.2);
+}
+
+Org_Manager .Cont_Request_Value .Request_Sec_Background {
+  width: 100%;
+  background-color: var(--background-color-type1);
+  padding: 1.5em;
+  border-radius: 1em;
+}
+
+Org_Manager .double_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+}
+
+Org_Manager .create_icon {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+Org_Manager .create_icon svg {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+Org_Manager .create_icon svg path {
+  fill: var(--white-color);
+}
+
+Org_Manager .salario_btns {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+Org_Manager .salario_btns svg {
+  cursor: pointer;
+  transition: var(--transition-time);
+}
+
+Org_Manager .salario_btns svg:nth-child(2) path {
+  stroke: #858585;
+}
+
+/* --------------------------------- */
+
+Org_Manager .Block_Invite_Value {
+  width: 100%;
+}
+
+/* --------------------------------- */
+/* 
+@media only screen and (max-width: 1366px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 0.72 !important;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 0.85;
+  }
+}
+
+@media only screen and (min-width: 2160px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 1.15;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 1.35;
+  }
+}
+
+@media only screen and (min-width: 3200px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 1.65;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  Org_Manager .Container_XL > :first-child {
+    zoom: 2;
+  }
+}
+
+-------------------------------------------- */

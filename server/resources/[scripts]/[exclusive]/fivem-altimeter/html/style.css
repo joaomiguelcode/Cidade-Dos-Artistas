@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Orbitron", monospace;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#altimeter-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Dispositivo principal */
+.altimeter-device {
+  width: 400px;
+  height: 300px;
+  position: relative;
+}
+
+.device-frame {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 4px solid #8b4513;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(139, 69, 19, 0.3);
+}
+
+/* Adicionar detalhes do dispositivo */
+.device-frame::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid #654321;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* Adicionar parafusos decorativos */
+.device-frame::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  box-shadow: calc(100% - 20px) 0 0 #333, 0 calc(100% - 20px) 0 #333, calc(100% - 20px) calc(100% - 20px) 0 #333;
+}
+
+/* Rosa dos ventos (círculo superior esquerdo) */
+.compass-section {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 110px;
+  height: 110px;
+}
+
+.compass-face {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #f0f0f0, #d0d0d0);
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.compass-directions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.direction {
+  position: absolute;
+  font-weight: 900;
+  font-size: 16px;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.direction.n {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.direction.e {
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.direction.s {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.direction.w {
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.compass-needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 40px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+  z-index: 10;
+}
+
+.needle-tip {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #ff0000, #ffffff);
+  border-radius: 1px;
+}
+
+.compass-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+}
+
+/* Visor de informações (retângulo superior direito) */
+.info-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  height: 100px;
+}
+
+.display-content {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 11px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.coords-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.info-label {
+  color: #888;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.info-value {
+  color: #00ff00;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+  font-size: 12px;
+}
+
+.info-value.coords {
+  font-size: 10px;
+}
+
+.info-unit {
+  color: #666;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+/* Minimapa (retângulo inferior) */
+.minimap-section {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  height: 140px;
+}
+
+.minimap-display {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.minimap-content {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a3a1a, #0a2a0a);
+  position: relative;
+}
+
+.map-grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 255, 0, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 0, 0.2) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.player-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  animation: pulse 2s infinite;
+}
+
+.direction-indicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+}
+
+/* Animações */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+#altimeter-container {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efeito de pulsação para valores críticos */
+.critical {
+  animation: criticalPulse 1s infinite;
+}
+
+@keyframes criticalPulse {
+  0%,
+  100% {
+    color: #ff0000;
+  }
+  50% {
+    color: #ff6666;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1366px) {
+  .altimeter-device {
+    width: 320px;
+    height: 240px;
+  }
+
+  .compass-section {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-display {
+    width: 150px;
+    height: 75px;
+  }
+
+  .minimap-section {
+    height: 100px;
+  }
+}

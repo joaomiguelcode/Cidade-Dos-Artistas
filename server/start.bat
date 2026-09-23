@@ -1,0 +1,1 @@
+..\artifacts\FXServer.exe +set onesync on +exec server.cfg

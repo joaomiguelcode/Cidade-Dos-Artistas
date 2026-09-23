@@ -1,0 +1,38 @@
+Config = {
+    Database = "oxmysql",
+    ConnectEvent = "Connect",
+    AdminPermission = "Admin",
+    DefaultImg = "./assets/generic_vehicle.png", 
+    ImgVehicles = "http://181.215.236.140/cars_images/",
+    ImgItens = "http://181.215.236.140/inventory/",
+    Classes = {
+        [0] = "Compacts",  
+        [1] = "Sedans",  
+        [2] = "SUVs",  
+        [3] = "Coupes",  
+        [4] = "Muscle",  
+        [5] = "Sports Classics",  
+        [6] = "Sports",  
+        [7] = "Super",  
+        [8] = "Motorcycles",  
+        [9] = "Off-road",  
+        [10] = "Industrial",  
+        [11] = "Utility",
+        [12] = "Vans",
+        [13] = "Cycles",  
+        [14] = "Boats",  
+        [15] = "Helicopters",  
+        [16] = "Planes",  
+        [17] = "Service", 
+        [18] = "Emergency",  
+        [19] = "Military",  
+        [20] = "Commercial",  
+        [21] = "Trains",
+        [22] = "Vip",
+        [23] = "Brasileiros"
+    },
+
+    Arrest = 4,
+    Tax = 4,
+    Segure = 4
+}

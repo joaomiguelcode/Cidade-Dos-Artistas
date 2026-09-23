@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>x-radiolist</title>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap');
+            .radio-list-container {
+                position: absolute;
+                top: 20%;
+                left: 0%;
+                text-align: left;
+                padding: 5px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: bold;
+                color: rgba(244, 196, 65, 255);
+                font-size: 0.8vw;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+   
+        </style>
+        <script type="text/javascript">
+            window.addEventListener("message", function(event) {
+                var item = event.data;
+
+                if (item.radioId != null) {
+                    let radioListElem = document.getElementById("radio-list");
+
+                    if (item.radioName != null) {
+                        let listItem = document.createElement("div");
+
+                        listItem.id = "radio-list-item-" + item.radioId;
+                        listItem.textContent = item.radioName;
+
+                        radioListElem.appendChild(listItem);
+                    } else if (item.radioTalking != null) {
+                        let listItem = document.getElementById("radio-list-item-" + item.radioId)
+                        
+                        if (item.radioTalking == false) {
+                            radioListElem.removeChild(listItem);
+                        }
+                    } else {
+                        let listItem = document.getElementById("radio-list-item-" + item.radioId)
+                        radioListElem.removeChild(listItem);
+                    }
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div class="radio-list-container" id="radio-list"></div>
+    </body>
+</html>

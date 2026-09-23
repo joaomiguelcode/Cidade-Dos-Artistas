@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altímetro Militar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="altimeter-container" class="hidden">
+        <div class="altimeter-device">
+            <!-- Frame do dispositivo -->
+            <div class="device-frame">
+                
+                <!-- Rosa dos ventos (círculo superior esquerdo) -->
+                <div class="compass-section">
+                    <div class="compass-face">
+                        <!-- Direções cardeais -->
+                        <div class="compass-directions">
+                            <span class="direction n">N</span>
+                            <span class="direction e">E</span>
+                            <span class="direction s">S</span>
+                            <span class="direction w">W</span>
+                        </div>
+                        
+                        <!-- Agulha da bússola -->
+                        <div class="compass-needle" id="compass-needle">
+                            <div class="needle-tip"></div>
+                        </div>
+                        
+                        <!-- Centro da bússola -->
+                        <div class="compass-center"></div>
+                    </div>
+                </div>
+                
+                <!-- Visor de informações (retângulo superior direito) -->
+                <div class="info-display">
+                    <div class="display-content">
+                        <div class="info-row">
+                            <span class="info-label">Altitude</span>
+                            <span class="info-value" id="altitude">0</span>
+                            <span class="info-unit">FT</span>
+                        </div>
+                        
+                        <div class="info-row">
+                            <span class="info-label">Airspeed</span>
+                            <span class="info-value" id="airspeed">0</span>
+                            <span class="info-unit">m/s</span>
+                        </div>
+                        
+                        <div class="info-row">
+                            <span class="info-label">Time</span>
+                            <span class="info-value" id="time">00:00</span>
+                        </div>
+                        
+                        <div class="info-row coords-row">
+                            <span class="info-label">Coords</span>
+                            <span class="info-value coords" id="coords">X: 0.0, Y: 0.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Minimapa (retângulo inferior) -->
+                <div class="minimap-section">
+                    <div class="minimap-display">
+                        <div class="minimap-content">
+                            <!-- Grid do mapa -->
+                            <div class="map-grid"></div>
+                            
+                            <!-- Indicador do jogador -->
+                            <div class="player-marker" id="player-marker"></div>
+                            
+                            <!-- Indicador de direção -->
+                            <div class="direction-indicator" id="direction-indicator">
+                                <span id="compass-direction">N</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

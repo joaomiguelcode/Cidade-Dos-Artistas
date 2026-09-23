@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <script src="js/vue.min.js"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="miniScores"></div>
+    <div id="hockeyui" class="hockeyui" style="display:none">
+        <div id="gameinfo" class="gameinfo" style="display: none">
+            <div id="row1" class="row">
+                <img id="p1mug" class="mug" />
+                <p id="p1name">Table Tennis Player 1</p>
+
+                <div id="p1extra" class="extracontent" style="width: auto; ">
+                    <div id="p1inside" class="inside">
+
+                    </div>
+                </div>
+
+                <div id="p1score" class="scorebox">
+                    ?
+                </div>
+                <div class="right">
+                    <div id="picon1" class="paddle p1icon" style="display:none"></div>
+                </div>
+            </div>
+            <div id="row2" class="row">
+                <div class="mugspinner"></div>
+                <img id="p2mug" class="mug" />
+                <p id="p2name">Table Tennis Player 2</p>
+
+                <div id="p2extra" class="extracontent" style="width: auto; ">
+                    <div id="p2inside" class="inside">
+
+                    </div>
+                </div>
+
+
+                <div id="p2score" class="scorebox">
+                    ?
+                </div>
+                <div class="right">
+                    <div id="picon2" class="paddle p2icon" style="display:none"></div>
+                </div>
+            </div>
+            <div id="row2" class="row" style=" height: 2vh; background-color: rgba(0, 0, 0, 0);">
+                <div class="mugspinner"></div>
+
+                <div id="p2score" class="scorebox"
+                    style="height: 2.0vh;line-height: 2.0vh;font-size: 1.0vh;display:none">
+                    SCORE
+                </div>
+            </div>
+            <div id="pingRow" class="littlerow" style="max-width: 75%;margin-top: -2.2vh">
+                0 PING
+            </div>
+            <div id="betRow" class="littlerow" style="max-width: 75%;">
+                STAKE: 0$
+            </div>
+            <div id="matchpoint" class="actionrow">
+                MATCH POINT!
+            </div>
+        </div>
+    </div>
+    <div id="notifyBar" v-if="visible" id="notifyui" class="hockeyui" style="width: 100vw; height: 100vh;">
+        <div v-if="mugshot == null" class="container" style="position: absolute; top: 30px; left: 30px;">
+            <div class="menu"
+                style="padding: 1.5vh; background-image: linear-gradient(to bottom, rgba(0,0,0,0.59), rgba(0,0,0,0)); display: block; align-items: center; max-width: calc(100% - 3.0vh); border-bottom: 0.1vh solid rgba(255, 255, 255, 0.197);">
+                <p class="key-content" style="color: white;" v-html="content"></p>
+            </div>
+        </div>
+        <div class="container" v-else-if="mugshot != null" style="position: absolute; top: 30px; left: 30px;">
+            <div class="menu"
+                style="display: flex; align-items: center; padding: 1.5vh; background-image: linear-gradient(to bottom, rgba(0,0,0,0.59), rgba(0,0,0,0)); max-width: calc(100% - 3.0vh); border-bottom: 0.1vh solid rgba(255, 255, 255, 0.197);">
+                <div class="avatar"
+                    style="width: 10%; display: flex; align-items: center; justify-content: flex-end; position: relative;">
+                    <img :src="mugshot" style="width: 32px; height: 32px;">
+                </div>
+                <p class="key-content" style="width: 90%; color: white;" v-html="content"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="menuui" class="hockeyui">
+        <div id="menu" v-if="visible" style="width: 100vw; height: 100vh;">
+            <div class="container" v-bind:class="[position, float]" v-if="visible">
+                <div class="title" :style="{ background: titleDescriptionColor }">
+                    <p>table tennis</p>
+                </div>
+                <div class="menu" style="background: black;">
+                    <div style="display: flex; justify-content: space-between;margin-right: 1vw;">
+                        <p class="menuSubtitle" :style="{ color: titleDescriptionColor }">{{ titleMenu }}</p>
+                        <p style="color: white;">{{displayIndex}} / {{totalItems}}</p>
+                    </div>
+                </div>
+                <div id="scrolldiv" style="overflow: hidden;">
+                    <div v-for="item, index in menu" class="menu"
+                        v-bind:class="{ 'active': item.active, 'black': item.black, 'disabled': !item.enabled }"
+                        v-if="item.visible === true && item.type !== 6">
+                        <p v-if="item.type === 1">
+                            <span v-html="item.label"></span>
+                            <span v-html="item.secondLabel" v-if="item.secondLabel !== ''"
+                                style="float: right; margin-right: 0.7vw;"></span>
+                        </p>
+                        <p v-else-if="item.type === 2">
+                            <span v-html="item.label"></span>
+                            <span style="float: right; margin-right: 1vw;">&lt; {{ item.displayLabel }} &gt;</span>
+                        </p>
+                        <p v-else-if="item.type === 3" :style="{ color: titleDescriptionColor }">
+                            <span v-html="item.label"></span>
+                            <span v-html="item.secondLabel" v-if="item.secondLabel !== ''"
+                                style="float: right; margin-right: 0.7vw;"></span>
+                        </p>
+                        <p v-else-if="item.type === 4">
+                            <span v-html="item.label"></span>
+                            <span v-if="item.checked" style="float: right; margin-right: 0.7vw;">
+                                <svg style="width:19px;height:19px" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                    <path
+                                        d="M13.646 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708l1-1a.5.5 0 0 1 .708 0L6 9.293l6.646-6.647a.5.5 0 0 1 .708 0l1 1z" />
+                                </svg>
+                            </span>
+                        </p>
+                        <p v-else-if="item.type === 5">
+                        <div v-if="item.type === 5" style="display: flex; align-items: center;">
+                            <div class="avatar"
+                                style="width: 10%; display: flex; align-items: center; justify-content: flex-end; position: relative;">
+                                <img :src="item.mugShot" style="width: 32px; height: 32px;">
+                            </div>
+                            <p style="width: 90%;">
+                                <span v-html="item.label"></span>
+                                <span v-html="item.secondLabel" v-if="item.secondLabel !== ''"
+                                    style="float: right; margin-right: 0.7vw;"></span>
+                            </p>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="menu key-content"
+                    style="padding: 1.5vh; background-image: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0)); display: flex; align-items: center; max-width: calc(100% - 3.0vh); border-bottom: 0.1vh solid rgba(255, 255, 255, 0.197);"
+                    v-if="currentDescription && currentDescription !== null && currentDescription !== ''">
+                    <p style="color: white;" v-html="currentDescription"></p>
+                </div>
+
+                <div v-for="item, index in menu" v-if="item.visible === true && item.type === 6" class="menu"
+                    style="display: flex; align-items: center;">
+                    <div class="avatar"
+                        style="width: 10%; display: flex; align-items: center; justify-content: flex-end; position: relative;">
+                        <img :src="item.mugShot" style="width: 32px; height: 32px;">
+                    </div>
+                    <p style="width: 90%;">
+                        <span v-html="item.label"></span>
+                        <span v-html="item.secondLabel" v-if="item.secondLabel !== ''"
+                            style="float: right; margin-right: 0.7vw;"></span>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="js/peerjs.min.js"></script>
+<script src="js/menu.js" type="text/javascript"></script>
+<script src="js/howler.js"></script>
+<script src="js/howler.spatial.min.js"></script>
+<script src="js/client.js" type="text/javascript"></script>
+<script src="js/peerjsbridge.js" type="text/javascript"></script>
+<script src="js/sound.js" type="text/javascript"></script>

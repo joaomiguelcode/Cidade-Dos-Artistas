@@ -1,0 +1,178 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="peerjs.min.js"></script>
+</head>
+
+<div id="hockeyui" class="hockeyui" style="display:none">
+    <iframe id="gameframe" src="about:blank" class="frame">
+    </iframe>
+
+    <div id="counter" class="countdown2" style="display: none">
+        ?
+    </div>
+
+    <div id="wasted" class="wasted" style="display: none">
+        ???
+    </div>
+
+    <div id="gameinfo" class="gameinfo" style="display: none">
+        <div id="row1" class="row">
+            <img id="p1mug" class="mug" />
+            <p id="p1name">Ice Hockey Player 1</p>
+            <div id="p1saves" class="notifybox">
+                ?
+            </div>
+            <div id="p1score" class="scorebox">
+                ?
+            </div>
+
+            <div class="right">
+                <div id="picon1" class="paddle p1icon"></div>
+            </div>
+        </div>
+        <div id="row2" class="row">
+            <div class="mugspinner"></div>
+            <img id="p2mug" class="mug" />
+            <p id="p2name">Ice Hockey Player 2</p>
+            <div id="p2saves" class="notifybox">
+                ?
+            </div>
+            <div id="p2score" class="scorebox">
+                ?
+            </div>
+            <div class="right">
+                <div id="picon2" class="paddle p2icon"></div>
+            </div>
+        </div>
+
+        <div id="row2" class="row" style=" height: 2vh; background-color: rgba(0, 0, 0, 0);">
+            <div class="mugspinner"></div>
+            <div id="p1saves" class="notifybox" style="height: 2.0vh; line-height: 2.0vh;font-size: 1.0vh;">
+                SAVES
+            </div>
+            <div id="p2score" class="scorebox" style="height: 2.0vh;line-height: 2.0vh;font-size: 1.0vh;">
+                GOALS
+            </div>
+
+        </div>
+
+        <div id="pingRow" class="littlerow" style="max-width: 75%;margin-top: -2.2vh">
+            0 PING
+        </div>
+
+        <div id="betRow" class="littlerow" style="max-width: 75%;display: none;">
+            STAKE: 0$
+        </div>
+
+        <div id="matchpoint" class="actionrow">
+            MATCH POINT!
+        </div>
+    </div>
+
+    <div id="loading" class="loadingbar" style="display: none;">
+        <img src="loading.gif" />
+        <p id="loadingtext">???</p>
+    </div>
+</div>
+
+<script src="client.js"></script>
+
+<script>
+    var pool = [];
+
+    // creates a new PeerJS peer instance and sets up event listeners.
+    function CreateNewPeer(peerInstanceId) {
+        var peer = new Peer();
+        peer.peerInstanceId = peerInstanceId;
+        pool[peerInstanceId] = peer;
+        peer.on('open', function (id) {
+            CallFivem({ action: "pOpen", peerInstanceId: peerInstanceId, id: id });
+        });
+
+        peer.on('connection', function (conn) {
+            var connId = conn.peer;
+            pool[connId] = conn;
+            CallFivem({ action: "pConnection", peerInstanceId: peerInstanceId, connId: connId });
+            conn.on('data', function (data) {
+                CallFivem({ action: "cData", peerInstanceId: peerInstanceId, connId: connId, data: data });
+            });
+
+            conn.on('open', function () {
+                CallFivem({ action: "cOpen", peerInstanceId: peerInstanceId, connId: connId });
+            });
+
+            conn.on('close', function () {
+                CallFivem({ action: "cClose", peerInstanceId: peerInstanceId, connId: connId });
+            });
+
+            conn.on('error', function (err) {
+                CallFivem({ action: "cError", peerInstanceId: peerInstanceId, connId: connId, err: err });
+            });
+        });
+
+        peer.on('close', function () {
+            CallFivem({ action: "pClose", peerInstanceId: peerInstanceId });
+        });
+
+        peer.on('disconnected', function () {
+            CallFivem({ action: "pDisconnected", peerInstanceId: peerInstanceId });
+        });
+
+        peer.on('error', function (err) {
+            CallFivem({ action: "pError", peerInstanceId: peerInstanceId, err: err });
+        });
+    }
+
+    // listens for messages from the client and performs actions based on the message's "action" property
+    window.addEventListener('message', (event) => {
+        let data = event.data
+        if (data.action == 'CreatePeer') {
+            CreateNewPeer(data.peerInstanceId);
+        }
+        else if (data.action == 'ConnSend') {
+            pool[data.connId].send(data.data);
+        } else if (data.action == 'CreatePeerConn') {
+            var connId = data.connId;
+            var peerInstanceId = data.peerInstanceId;
+            var peerConn = pool[data.peerInstanceId].connect(connId);
+            peerConn.peerInstanceId = peerInstanceId;
+            pool[connId] = peerConn;
+
+            peerConn.on('data', function (data) {
+                CallFivem({ action: "cData", peerInstanceId: peerInstanceId, connId: connId, data: data });
+            });
+
+            peerConn.on('open', function () {
+                CallFivem({ action: "cOpen", peerInstanceId: peerInstanceId, connId: connId });
+            });
+
+            peerConn.on('close', function () {
+                CallFivem({ action: "cClose", peerInstanceId: peerInstanceId, connId: connId });
+            });
+
+            peerConn.on('error', function (err) {
+                CallFivem({ action: "cError", peerInstanceId: peerInstanceId, connId: connId, err: err });
+            });
+        } else if (data.action == 'ConnClose') {
+            var connId = data.connId;
+            pool[connId].close();
+        }
+        else if (data.action == 'PeerClose') {
+            pool[data.peerInstanceId].disconnect()
+        }
+        else if (data.action == 'PeerDestroy') {
+            pool[data.peerInstanceId].destroy()
+        }
+    })
+
+    // sends data back to the client by making a POST request
+    function CallFivem(data) {
+        fetch(`https://${GetParentResourceName()}/peerevent`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(data)
+        });
+    }
+</script>

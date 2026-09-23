@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF - 8"?>
+
+<CWeaponModelInfo__InitDataList>
+    <InitDatas>
+        <Item>
+            <modelName>w_pi_weld</modelName>
+            <txdName>w_pi_weld</txdName>
+            <ptfxAssetName>NULL</ptfxAssetName>
+            <lodDist value="10"/>
+        </Item>
+        <Item>
+            <modelName>w_am_drill</modelName>
+            <txdName>w_am_drill</txdName>
+            <ptfxAssetName>NULL</ptfxAssetName>
+            <lodDist value="10"/>
+        </Item>
+    </InitDatas>
+</CWeaponModelInfo__InitDataList>
+

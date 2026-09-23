@@ -1,0 +1,166 @@
+/* html,body {
+	background:transparent;
+	background-color: rgba(0, 0, 0, 0); 
+    margin: 0px auto; 
+                
+} */
+
+* {
+  zoom: 0.987;
+}
+.default {
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+}
+p {
+  margin: 0;
+}
+.default #top {
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+
+  margin-right: 6.5rem;
+  margin-top: 15rem;
+}
+
+.default #bg {
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.default #top-right-text {
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Share Tech Mono", monospace;
+  color: #d3d3d3;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.default #custimg {
+  padding: 10px;
+  margin-right: 5px;
+  height: 10.5rem;
+  display: none;
+
+  object-fit: contain;
+}
+
+.default2 #top {
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+}
+
+.default2 #top-right-text {
+  margin-top: 7px;
+  margin-right: -8px;
+  color: white;
+  padding: 10px;
+  font-family: "Inconsolata", monospace;
+  font-size: 28px;
+  line-height: 34px;
+  text-shadow: 2px 2px 2px black;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.default2 #custimg {
+  padding: 8px;
+  margin-right: 5px;
+  height: 90px;
+  display: none;
+}
+
+.Blink {
+  animation: blinker 1.5s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
+
+#container {
+  position: absolute;
+  height: auto;
+  top: 20%;
+  right: 20%;
+  border-radius: 5px;
+  background: transparent !important;
+}
+
+#buttons {
+  max-height: 75vh;
+  width: 35vw;
+  overflow-x: none;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+html,
+body {
+  background: transparent !important;
+}
+
+#buttons::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.button {
+  width: auto;
+  max-width: 45%;
+  height: 10%;
+  background-color: rgb(23 23 23 / 80%);
+  margin: auto;
+  position: relative;
+  top: 10%;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  padding: 0.45rem;
+  border-radius: 1vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rem 0rem 0.1rem 0.05rem #000000;
+}
+
+.button:hover {
+  background-color: #dc143c;
+  transition: 0.2s;
+}
+
+.button > .txt {
+  color: rgb(232, 229, 229);
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  font-weight: 300;
+}
+
+.button > .header {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: left;
+  overflow: wrap;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+  font-weight: bold;
+}
